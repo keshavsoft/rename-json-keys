@@ -1,0 +1,1686 @@
+[
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/CA",
+    "VOUCHERNUMBER": 1,
+    "REFERENCE": "CA/1",
+    "MASTERID": 174169,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Shading Net Kgs",
+        "RATE": "280.90/kgs",
+        "AMOUNT": 1280.9,
+        "ACTUALQTY": "4.560 kgs",
+        "BILLEDQTY": "4.560 kgs",
+        "BATCHALLOCATIONS.LIST": [
+          {
+            "MFDON": 20210723,
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "Rishi-Rs.205/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "3.560 kgs",
+            "BILLEDQTY": "3.560 kgs",
+            "AMOUNT": 1000
+          },
+          {
+            "MFDON": 20240509,
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "Bahnu-Fortune-Rs.178/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "1.000 kgs",
+            "BILLEDQTY": "1.000 kgs",
+            "AMOUNT": 280.9
+          }
+        ]
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "312.50/kgs",
+        "AMOUNT": 100,
+        "ACTUALQTY": "0.320 kgs",
+        "BILLEDQTY": "0.320 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.320 kgs",
+          "BILLEDQTY": "0.320 kgs",
+          "AMOUNT": 100
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "259.26/kgs",
+        "AMOUNT": 420,
+        "ACTUALQTY": "1.620 kgs",
+        "BILLEDQTY": "1.620 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1.620 kgs",
+          "BILLEDQTY": "1.620 kgs",
+          "AMOUNT": 420
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "250.00/kgs",
+        "AMOUNT": 200,
+        "ACTUALQTY": "0.800 kgs",
+        "BILLEDQTY": "0.800 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.800 kgs",
+          "BILLEDQTY": "0.800 kgs",
+          "AMOUNT": 200
+        }
+      },
+      {
+        "STOCKITEMNAME": "Nylon Cheeses",
+        "RATE": "180.00/Nos",
+        "AMOUNT": 1440,
+        "ACTUALQTY": "8 Nos",
+        "BILLEDQTY": "8 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Kumaran-250gms-Rs.126/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "8 Nos",
+          "BILLEDQTY": "8 Nos",
+          "AMOUNT": 1440
+        }
+      },
+      {
+        "STOCKITEMNAME": "0.75/90/50",
+        "RATE": "430.46/kgs",
+        "AMOUNT": 1299.99,
+        "ACTUALQTY": "3.020 kgs",
+        "BILLEDQTY": "3.020 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Nalam Godown",
+          "BATCHNAME": "Tri-Rs.273/-",
+          "DESTINATIONGODOWNNAME": "Nalam Godown",
+          "ACTUALQTY": "3.020 kgs",
+          "BILLEDQTY": "3.020 kgs",
+          "AMOUNT": 1299.99
+        }
+      },
+      {
+        "STOCKITEMNAME": "Export Surplus New",
+        "RATE": "576.92/kgs",
+        "AMOUNT": 300,
+        "ACTUALQTY": "0.520 kgs",
+        "BILLEDQTY": "0.520 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1.20-275/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.520 kgs",
+          "BILLEDQTY": "0.520 kgs",
+          "AMOUNT": 300
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "10.00/Nos",
+        "AMOUNT": 100,
+        "ACTUALQTY": "10 Nos",
+        "BILLEDQTY": "10 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-RRR-Rs.6/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10 Nos",
+          "BILLEDQTY": "10 Nos",
+          "AMOUNT": 100
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "12.00/Nos",
+        "AMOUNT": 240,
+        "ACTUALQTY": "20 Nos",
+        "BILLEDQTY": "20 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "20 Nos",
+          "BILLEDQTY": "20 Nos",
+          "AMOUNT": 240
+        }
+      },
+      {
+        "STOCKITEMNAME": "Anchor Gaff Hooks",
+        "RATE": "140.00/Nos",
+        "AMOUNT": 840,
+        "ACTUALQTY": "6 Nos",
+        "BILLEDQTY": "6 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "8/0-8mm-Rs.85/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "6 Nos",
+          "BILLEDQTY": "6 Nos",
+          "AMOUNT": 840
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 1,
+    "REFERENCE": "CR/1",
+    "MASTERID": 174170,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "3.50 White F.Line",
+      "RATE": "470.00/kgs",
+      "AMOUNT": 9635,
+      "ACTUALQTY": "20.500 kgs",
+      "BILLEDQTY": "20.500 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": "",
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "Gd-Rs.250/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "20.500 kgs",
+        "BILLEDQTY": "20.500 kgs",
+        "AMOUNT": 9635
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 2,
+    "REFERENCE": "CR/2",
+    "MASTERID": 174171,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Water Proof Tape Mtrs",
+        "RATE": "65.00/mtr",
+        "AMOUNT": 325,
+        "ACTUALQTY": "5.00 mtr",
+        "BILLEDQTY": "5.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "4\"maruthi-5mtr Roll-Rs32/- Mtr",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "5.00 mtr",
+          "BILLEDQTY": "5.00 mtr",
+          "AMOUNT": 325
+        }
+      },
+      {
+        "STOCKITEMNAME": "PPMF TWINE",
+        "RATE": "500.00/kgs",
+        "AMOUNT": 160,
+        "ACTUALQTY": "0.320 kgs",
+        "BILLEDQTY": "0.320 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": 20231031,
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1/2-Glon-Rs.325/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.320 kgs",
+          "BILLEDQTY": "0.320 kgs",
+          "AMOUNT": 160
+        }
+      },
+      {
+        "STOCKITEMNAME": "Shading Net Kgs",
+        "RATE": "333.33/kgs",
+        "AMOUNT": 500,
+        "ACTUALQTY": "1.500 kgs",
+        "BILLEDQTY": "1.500 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": 20210723,
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Rishi-Rs.205/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1.500 kgs",
+          "BILLEDQTY": "1.500 kgs",
+          "AMOUNT": 500
+        }
+      },
+      {
+        "STOCKITEMNAME": "GD Connected",
+        "RATE": "586.21/kgs",
+        "AMOUNT": 170,
+        "ACTUALQTY": "0.290 kgs",
+        "BILLEDQTY": "0.290 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Conn-Rs.370/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.290 kgs",
+          "BILLEDQTY": "0.290 kgs",
+          "AMOUNT": 170
+        }
+      },
+      {
+        "STOCKITEMNAME": "NYLON",
+        "RATE": "608.70/kgs",
+        "AMOUNT": 140,
+        "ACTUALQTY": "0.230 kgs",
+        "BILLEDQTY": "0.230 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Dyed-Kk-Rs.455/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.230 kgs",
+          "BILLEDQTY": "0.230 kgs",
+          "AMOUNT": 140
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "260.87/kgs",
+        "AMOUNT": 180,
+        "ACTUALQTY": "0.690 kgs",
+        "BILLEDQTY": "0.690 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.690 kgs",
+          "BILLEDQTY": "0.690 kgs",
+          "AMOUNT": 180
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/E",
+    "VOUCHERNUMBER": 1,
+    "REFERENCE": "E/1",
+    "MASTERID": 174173,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "Shading Net Kgs",
+      "RATE": "300.00/kgs",
+      "AMOUNT": 2700,
+      "ACTUALQTY": "9.000 kgs",
+      "BILLEDQTY": "9.000 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": 20210723,
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "Rishi-Rs.205/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "9.000 kgs",
+        "BILLEDQTY": "9.000 kgs",
+        "AMOUNT": 2700
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/slip",
+    "VOUCHERNUMBER": 1,
+    "REFERENCE": "",
+    "MASTERID": 174174,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "Tube Octopus",
+      "RATE": "145.00/Nos",
+      "AMOUNT": 18125,
+      "ACTUALQTY": "125 Nos",
+      "BILLEDQTY": "125 Nos",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": 20250719,
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "30cm-Young-Rs.70/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "125 Nos",
+        "BILLEDQTY": "125 Nos",
+        "AMOUNT": 18125
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/CA",
+    "VOUCHERNUMBER": 2,
+    "REFERENCE": "CA/2",
+    "MASTERID": 174177,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "Shading Net Kgs",
+      "RATE": "350.49/kgs",
+      "AMOUNT": 1430,
+      "ACTUALQTY": "4.080 kgs",
+      "BILLEDQTY": "4.080 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": 20210723,
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "Rishi-Rs.205/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "4.080 kgs",
+        "BILLEDQTY": "4.080 kgs",
+        "AMOUNT": 1430
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 3,
+    "REFERENCE": "CR/3",
+    "MASTERID": 174179,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Rose Knitted Fabric Mtrs",
+        "RATE": "23.00/mtr",
+        "AMOUNT": 2760,
+        "ACTUALQTY": "120.00 mtr",
+        "BILLEDQTY": "120.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Rose-RK-Rs.17.25",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "120.00 mtr",
+          "BILLEDQTY": "120.00 mtr",
+          "AMOUNT": 2760
+        }
+      },
+      {
+        "STOCKITEMNAME": "Rose Knitted Fabric Mtrs",
+        "RATE": "23.00/mtr",
+        "AMOUNT": 2760,
+        "ACTUALQTY": "120.00 mtr",
+        "BILLEDQTY": "120.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Rose-RK-Rs.17.25",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "120.00 mtr",
+          "BILLEDQTY": "120.00 mtr",
+          "AMOUNT": 2760
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 4,
+    "REFERENCE": "CR/4",
+    "MASTERID": 174184,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Superline Connected",
+        "RATE": "650.08/kgs",
+        "AMOUNT": 3920,
+        "ACTUALQTY": "6.030 kgs",
+        "BILLEDQTY": "6.030 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1.30-Wh-5*200-Rs.515/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "6.030 kgs",
+          "BILLEDQTY": "6.030 kgs",
+          "AMOUNT": 3920
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "12.00/Nos",
+        "AMOUNT": 360,
+        "ACTUALQTY": "30 Nos",
+        "BILLEDQTY": "30 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "30 Nos",
+          "BILLEDQTY": "30 Nos",
+          "AMOUNT": 360
+        }
+      },
+      {
+        "STOCKITEMNAME": "Nylon Cheeses",
+        "RATE": "180.00/Nos",
+        "AMOUNT": 180,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Shyamlon-Rs.104/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 180
+        }
+      },
+      {
+        "STOCKITEMNAME": "Y- 12cm",
+        "RATE": "120.00/Nos",
+        "AMOUNT": 2400,
+        "ACTUALQTY": "20 Nos",
+        "BILLEDQTY": "20 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "09.03.26-Rs.66/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "20 Nos",
+          "BILLEDQTY": "20 Nos",
+          "AMOUNT": 2400
+        }
+      },
+      {
+        "STOCKITEMNAME": "Viaadi Hooks",
+        "RATE": "7.50/Nos",
+        "AMOUNT": 3000,
+        "ACTUALQTY": "400 Nos",
+        "BILLEDQTY": "400 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "4-Rs.4960/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "400 Nos",
+          "BILLEDQTY": "400 Nos",
+          "AMOUNT": 3000
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/E",
+    "VOUCHERNUMBER": 2,
+    "REFERENCE": "E/2",
+    "MASTERID": 174180,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "TRAYS",
+        "RATE": "525.00/Nos",
+        "AMOUNT": 1050,
+        "ACTUALQTY": "2 Nos",
+        "BILLEDQTY": "2 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Stairs Godown",
+          "BATCHNAME": "Holenet-1.60kgs-Rs.265/-",
+          "DESTINATIONGODOWNNAME": "Stairs Godown",
+          "ACTUALQTY": "2 Nos",
+          "BILLEDQTY": "2 Nos",
+          "AMOUNT": 1050
+        }
+      },
+      {
+        "STOCKITEMNAME": "Water Proof Tape Mtrs",
+        "RATE": "36.00/mtr",
+        "AMOUNT": 180,
+        "ACTUALQTY": "5.00 mtr",
+        "BILLEDQTY": "5.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Maruthi-2\"-5mtr Roll-Rs.16/- Mtr",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "5.00 mtr",
+          "BILLEDQTY": "5.00 mtr",
+          "AMOUNT": 180
+        }
+      },
+      {
+        "STOCKITEMNAME": "F.LINE PKTS",
+        "RATE": "50.00/Nos",
+        "AMOUNT": 100,
+        "ACTUALQTY": "2 Nos",
+        "BILLEDQTY": "2 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "0.90-Gd-Rs.17.27-Rs.28/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2 Nos",
+          "BILLEDQTY": "2 Nos",
+          "AMOUNT": 100
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/slip",
+    "VOUCHERNUMBER": 2,
+    "REFERENCE": "",
+    "MASTERID": 174182,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "LEAD",
+      "RATE": "250.00/kgs",
+      "AMOUNT": 1000,
+      "ACTUALQTY": "4.000 kgs",
+      "BILLEDQTY": "4.000 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": "",
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "50gms-Rs.234/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "4.000 kgs",
+        "BILLEDQTY": "4.000 kgs",
+        "AMOUNT": 1000
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 5,
+    "REFERENCE": "CR/5",
+    "MASTERID": 174185,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "GD Connected",
+      "RATE": "578.95/kgs",
+      "AMOUNT": 330,
+      "ACTUALQTY": "0.570 kgs",
+      "BILLEDQTY": "0.570 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": "",
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "Conn-Rs.370/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "0.570 kgs",
+        "BILLEDQTY": "0.570 kgs",
+        "AMOUNT": 330
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/E",
+    "VOUCHERNUMBER": 3,
+    "REFERENCE": "E/3",
+    "MASTERID": 174187,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "0.50 Mono Red",
+        "RATE": "380.00/kgs",
+        "AMOUNT": 78078.6,
+        "ACTUALQTY": "205.470 kgs",
+        "BILLEDQTY": "205.470 kgs",
+        "BATCHALLOCATIONS.LIST": [
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "Sfil-Rs.282/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "5.330 kgs",
+            "BILLEDQTY": "5.330 kgs",
+            "AMOUNT": 2025.4
+          },
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "Sfil-Rs.295/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "200.140 kgs",
+            "BILLEDQTY": "200.140 kgs",
+            "AMOUNT": 76053.2
+          }
+        ]
+      },
+      {
+        "STOCKITEMNAME": "3.50 Blk",
+        "RATE": "360.00/kgs",
+        "AMOUNT": 14486.4,
+        "ACTUALQTY": "40.240 kgs",
+        "BILLEDQTY": "40.240 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Sfil-Rs.295/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "40.240 kgs",
+          "BILLEDQTY": "40.240 kgs",
+          "AMOUNT": 14486.4
+        }
+      },
+      {
+        "STOCKITEMNAME": "3.50 White F.Line",
+        "RATE": "470.00/kgs",
+        "AMOUNT": 9794.8,
+        "ACTUALQTY": "20.840 kgs",
+        "BILLEDQTY": "20.840 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Gd-Rs.250/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "20.840 kgs",
+          "BILLEDQTY": "20.840 kgs",
+          "AMOUNT": 9794.8
+        }
+      },
+      {
+        "STOCKITEMNAME": "Export Surplus New",
+        "RATE": "500.00/kgs",
+        "AMOUNT": 5235,
+        "ACTUALQTY": "10.470 kgs",
+        "BILLEDQTY": "10.470 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1.80-Rs.335/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10.470 kgs",
+          "BILLEDQTY": "10.470 kgs",
+          "AMOUNT": 5235
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "260.00/kgs",
+        "AMOUNT": 2691,
+        "ACTUALQTY": "10.350 kgs",
+        "BILLEDQTY": "10.350 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10.350 kgs",
+          "BILLEDQTY": "10.350 kgs",
+          "AMOUNT": 2691
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "250.00/kgs",
+        "AMOUNT": 3675,
+        "ACTUALQTY": "14.700 kgs",
+        "BILLEDQTY": "14.700 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "14.700 kgs",
+          "BILLEDQTY": "14.700 kgs",
+          "AMOUNT": 3675
+        }
+      },
+      {
+        "STOCKITEMNAME": "40 Mesh",
+        "RATE": "52.00/mtr",
+        "AMOUNT": 23400,
+        "ACTUALQTY": "450.00 mtr",
+        "BILLEDQTY": "450.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Nalam Godown",
+          "BATCHNAME": "Br Bor-42\"-37/-",
+          "DESTINATIONGODOWNNAME": "Nalam Godown",
+          "ACTUALQTY": "450.00 mtr",
+          "BILLEDQTY": "450.00 mtr",
+          "AMOUNT": 23400
+        }
+      },
+      {
+        "STOCKITEMNAME": "40 Mesh",
+        "RATE": "70.00/mtr",
+        "AMOUNT": 2100,
+        "ACTUALQTY": "30.00 mtr",
+        "BILLEDQTY": "30.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "48\"-Pfco-Rs.43/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "30.00 mtr",
+          "BILLEDQTY": "30.00 mtr",
+          "AMOUNT": 2100
+        }
+      },
+      {
+        "STOCKITEMNAME": "P.SHEET",
+        "RATE": "200.00/kgs",
+        "AMOUNT": 10814,
+        "ACTUALQTY": "54.070 kgs",
+        "BILLEDQTY": "54.070 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1mtr-Hari-Rs.142/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "54.070 kgs",
+          "BILLEDQTY": "54.070 kgs",
+          "AMOUNT": 10814
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales",
+    "VOUCHERNUMBER": 1,
+    "REFERENCE": "Direct",
+    "MASTERID": 174188,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "260.00/kgs",
+        "AMOUNT": 780,
+        "ACTUALQTY": "3.000 kgs",
+        "BILLEDQTY": "3.000 kgs",
+        "BATCHALLOCATIONS.LIST": [
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "20gms-Rs.234/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "2.000 kgs",
+            "BILLEDQTY": "2.000 kgs",
+            "AMOUNT": 520
+          },
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "10gms-Rs.240/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "1.000 kgs",
+            "BILLEDQTY": "1.000 kgs",
+            "AMOUNT": 260
+          }
+        ]
+      },
+      {
+        "STOCKITEMNAME": "F.LINE PKTS",
+        "RATE": "30.00/Nos",
+        "AMOUNT": 30,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "0.60-Gd-Rs.10.27-Rs.17/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 30
+        }
+      },
+      {
+        "STOCKITEMNAME": "TINSEL",
+        "RATE": "20.00/Nos",
+        "AMOUNT": 20,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Mix Color-Praise-Rs.5/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 20
+        }
+      },
+      {
+        "STOCKITEMNAME": "P.SHEET",
+        "RATE": "186.34/kgs",
+        "AMOUNT": 600.01,
+        "ACTUALQTY": "3.220 kgs",
+        "BILLEDQTY": "3.220 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1mtr-Hari-Rs.142/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "3.220 kgs",
+          "BILLEDQTY": "3.220 kgs",
+          "AMOUNT": 600.01
+        }
+      },
+      {
+        "STOCKITEMNAME": "30-MADHURAM-48\"",
+        "RATE": "100.00/mtr",
+        "AMOUNT": 200,
+        "ACTUALQTY": "2.00 mtr",
+        "BILLEDQTY": "2.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-SHQ-48\"-Pf-Rs.67/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2.00 mtr",
+          "BILLEDQTY": "2.00 mtr",
+          "AMOUNT": 200
+        }
+      },
+      {
+        "STOCKITEMNAME": "Velcro Sticker",
+        "RATE": "18.75/mtr",
+        "AMOUNT": 150,
+        "ACTUALQTY": "8.00 mtr",
+        "BILLEDQTY": "8.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "20mm-Blk-Rs.10/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "8.00 mtr",
+          "BILLEDQTY": "8.00 mtr",
+          "AMOUNT": 150
+        }
+      },
+      {
+        "STOCKITEMNAME": "GD Connected",
+        "RATE": "633.33/kgs",
+        "AMOUNT": 190,
+        "ACTUALQTY": "0.300 kgs",
+        "BILLEDQTY": "0.300 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Conn-Rs.370/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.300 kgs",
+          "BILLEDQTY": "0.300 kgs",
+          "AMOUNT": 190
+        }
+      },
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "250.00/kgs",
+        "AMOUNT": 500,
+        "ACTUALQTY": "2.000 kgs",
+        "BILLEDQTY": "2.000 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "50gms-Rs.234/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2.000 kgs",
+          "BILLEDQTY": "2.000 kgs",
+          "AMOUNT": 500
+        }
+      },
+      {
+        "STOCKITEMNAME": "Big Hole-Knitted Fabric Mtrs",
+        "RATE": "40.00/mtr",
+        "AMOUNT": 240,
+        "ACTUALQTY": "6.00 mtr",
+        "BILLEDQTY": "6.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Bighole-RK-Rs.13/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "6.00 mtr",
+          "BILLEDQTY": "6.00 mtr",
+          "AMOUNT": 240
+        }
+      },
+      {
+        "STOCKITEMNAME": "Nylon Reels Nos(Small)",
+        "RATE": "70.00/Nos",
+        "AMOUNT": 70,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "100gms-Shy-Rs.45/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 70
+        }
+      },
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "260.00/kgs",
+        "AMOUNT": 260,
+        "ACTUALQTY": "1.000 kgs",
+        "BILLEDQTY": "1.000 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "50gms-Rs.234/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1.000 kgs",
+          "BILLEDQTY": "1.000 kgs",
+          "AMOUNT": 260
+        }
+      },
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "260.00/kgs",
+        "AMOUNT": 520,
+        "ACTUALQTY": "2.000 kgs",
+        "BILLEDQTY": "2.000 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "20gms-Rs.234/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2.000 kgs",
+          "BILLEDQTY": "2.000 kgs",
+          "AMOUNT": 520
+        }
+      },
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "300.00/kgs",
+        "AMOUNT": 120,
+        "ACTUALQTY": "0.400 kgs",
+        "BILLEDQTY": "0.400 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "20gms-Rs.234/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.400 kgs",
+          "BILLEDQTY": "0.400 kgs",
+          "AMOUNT": 120
+        }
+      },
+      {
+        "STOCKITEMNAME": "Water Proof Tape Mtrs",
+        "RATE": "33.33/mtr",
+        "AMOUNT": 499.95,
+        "ACTUALQTY": "15.00 mtr",
+        "BILLEDQTY": "15.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Maruthi-2\"-5mtr Roll-Rs.16/- Mtr",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "15.00 mtr",
+          "BILLEDQTY": "15.00 mtr",
+          "AMOUNT": 499.95
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 6,
+    "REFERENCE": "CR/6",
+    "MASTERID": 174189,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Export Surplus New",
+        "RATE": "500.00/kgs",
+        "AMOUNT": 1410,
+        "ACTUALQTY": "2.820 kgs",
+        "BILLEDQTY": "2.820 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1.10-Rs.286/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2.820 kgs",
+          "BILLEDQTY": "2.820 kgs",
+          "AMOUNT": 1410
+        }
+      },
+      {
+        "STOCKITEMNAME": "Mcf Scorpio",
+        "RATE": "38.00/mtr",
+        "AMOUNT": 22800,
+        "ACTUALQTY": "600.00 mtr",
+        "BILLEDQTY": "600.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Nalam Godown",
+          "BATCHNAME": "60\" Gr-Rs.27/-",
+          "DESTINATIONGODOWNNAME": "Nalam Godown",
+          "ACTUALQTY": "600.00 mtr",
+          "BILLEDQTY": "600.00 mtr",
+          "AMOUNT": 22800
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 7,
+    "REFERENCE": "CR/7",
+    "MASTERID": 174190,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "0.28/58",
+      "RATE": "580.52/kgs",
+      "AMOUNT": 6020,
+      "ACTUALQTY": "10.370 kgs",
+      "BILLEDQTY": "10.370 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": "",
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "100md-Kishore-Rs.487/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "10.370 kgs",
+        "BILLEDQTY": "10.370 kgs",
+        "AMOUNT": 6020
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/slip",
+    "VOUCHERNUMBER": 3,
+    "REFERENCE": "",
+    "MASTERID": 174193,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Superline",
+        "RATE": "630.00/kgs",
+        "AMOUNT": 4410,
+        "ACTUALQTY": "7.000 kgs",
+        "BILLEDQTY": "7.000 kgs",
+        "BATCHALLOCATIONS.LIST": [
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "1.40-Blu-Rs.497/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "2.840 kgs",
+            "BILLEDQTY": "2.840 kgs",
+            "AMOUNT": 1789.2
+          },
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "1.30-Blue-Rs.538/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "4.160 kgs",
+            "BILLEDQTY": "4.160 kgs",
+            "AMOUNT": 2620.8
+          }
+        ]
+      },
+      {
+        "STOCKITEMNAME": "LEAD",
+        "RATE": "260.00/kgs",
+        "AMOUNT": 2607.8,
+        "ACTUALQTY": "10.030 kgs",
+        "BILLEDQTY": "10.030 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "50gms-Rs.234/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10.030 kgs",
+          "BILLEDQTY": "10.030 kgs",
+          "AMOUNT": 2607.8
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "12.00/Nos",
+        "AMOUNT": 360,
+        "ACTUALQTY": "30 Nos",
+        "BILLEDQTY": "30 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "30 Nos",
+          "BILLEDQTY": "30 Nos",
+          "AMOUNT": 360
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/CA",
+    "VOUCHERNUMBER": 3,
+    "REFERENCE": "CA/3",
+    "MASTERID": 174195,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "2/3-26MM",
+        "RATE": "750.00/kgs",
+        "AMOUNT": 1950,
+        "ACTUALQTY": "2.600 kgs",
+        "BILLEDQTY": "2.600 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Stairs Godown",
+          "BATCHNAME": "600md-KK-Rs.522/-",
+          "DESTINATIONGODOWNNAME": "Stairs Godown",
+          "ACTUALQTY": "2.600 kgs",
+          "BILLEDQTY": "2.600 kgs",
+          "AMOUNT": 1950
+        }
+      },
+      {
+        "STOCKITEMNAME": "Nylon Reels Nos(Small)",
+        "RATE": "80.00/Nos",
+        "AMOUNT": 80,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "100gms-Sfil-Rs.33/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 80
+        }
+      },
+      {
+        "STOCKITEMNAME": "NEEDLES",
+        "RATE": "10.00/Nos",
+        "AMOUNT": 20,
+        "ACTUALQTY": "2 Nos",
+        "BILLEDQTY": "2 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "5\"-Curl-Tr-Fish-Rs.5.60",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2 Nos",
+          "BILLEDQTY": "2 Nos",
+          "AMOUNT": 20
+        }
+      },
+      {
+        "STOCKITEMNAME": "0.75/35",
+        "RATE": "500.00/kgs",
+        "AMOUNT": 240,
+        "ACTUALQTY": "0.480 kgs",
+        "BILLEDQTY": "0.480 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "100md-Hari-Rs.255/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.480 kgs",
+          "BILLEDQTY": "0.480 kgs",
+          "AMOUNT": 240
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "320.00/kgs",
+        "AMOUNT": 80,
+        "ACTUALQTY": "0.250 kgs",
+        "BILLEDQTY": "0.250 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.250 kgs",
+          "BILLEDQTY": "0.250 kgs",
+          "AMOUNT": 80
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "320.00/kgs",
+        "AMOUNT": 80,
+        "ACTUALQTY": "0.250 kgs",
+        "BILLEDQTY": "0.250 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.250 kgs",
+          "BILLEDQTY": "0.250 kgs",
+          "AMOUNT": 80
+        }
+      },
+      {
+        "STOCKITEMNAME": "PPMF TWINE",
+        "RATE": "500.00/kgs",
+        "AMOUNT": 160,
+        "ACTUALQTY": "0.320 kgs",
+        "BILLEDQTY": "0.320 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": 20230131,
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "1/3-Glon-Rs.325/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.320 kgs",
+          "BILLEDQTY": "0.320 kgs",
+          "AMOUNT": 160
+        }
+      },
+      {
+        "STOCKITEMNAME": "GD Connected",
+        "RATE": "592.59/kgs",
+        "AMOUNT": 160,
+        "ACTUALQTY": "0.270 kgs",
+        "BILLEDQTY": "0.270 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Conn-Rs.370/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.270 kgs",
+          "BILLEDQTY": "0.270 kgs",
+          "AMOUNT": 160
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 8,
+    "REFERENCE": "CR/8",
+    "MASTERID": 174198,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "3.50 White F.Line",
+        "RATE": "471.70/kgs",
+        "AMOUNT": 1000,
+        "ACTUALQTY": "2.120 kgs",
+        "BILLEDQTY": "2.120 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Gd-Rs.250/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2.120 kgs",
+          "BILLEDQTY": "2.120 kgs",
+          "AMOUNT": 1000
+        }
+      },
+      {
+        "STOCKITEMNAME": "Bleaching Hapa",
+        "RATE": "120.00/Nos",
+        "AMOUNT": 120,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "20pf-Rs.30+Rs.21=Rs.81",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 120
+        }
+      },
+      {
+        "STOCKITEMNAME": "ROPE",
+        "RATE": "320.00/kgs",
+        "AMOUNT": 80,
+        "ACTUALQTY": "0.250 kgs",
+        "BILLEDQTY": "0.250 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Tuf-Rs.170",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.250 kgs",
+          "BILLEDQTY": "0.250 kgs",
+          "AMOUNT": 80
+        }
+      },
+      {
+        "STOCKITEMNAME": "Mosq Nets Hosur",
+        "RATE": "280.00/Nos",
+        "AMOUNT": 280,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "15mtr-6.5*4.5-Rs.120/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 280
+        }
+      },
+      {
+        "STOCKITEMNAME": "NYLON",
+        "RATE": "640.00/kgs",
+        "AMOUNT": 160,
+        "ACTUALQTY": "0.250 kgs",
+        "BILLEDQTY": "0.250 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Dyed-Kk-Rs.455/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.250 kgs",
+          "BILLEDQTY": "0.250 kgs",
+          "AMOUNT": 160
+        }
+      },
+      {
+        "STOCKITEMNAME": "NYLON",
+        "RATE": "649.12/kgs",
+        "AMOUNT": 740,
+        "ACTUALQTY": "1.140 kgs",
+        "BILLEDQTY": "1.140 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Dyed-Kk-Rs.455/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1.140 kgs",
+          "BILLEDQTY": "1.140 kgs",
+          "AMOUNT": 740
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "14.00/Nos",
+        "AMOUNT": 140,
+        "ACTUALQTY": "10 Nos",
+        "BILLEDQTY": "10 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10 Nos",
+          "BILLEDQTY": "10 Nos",
+          "AMOUNT": 140
+        }
+      },
+      {
+        "STOCKITEMNAME": "Velcro Sticker",
+        "RATE": "25.00/mtr",
+        "AMOUNT": 150,
+        "ACTUALQTY": "6.00 mtr",
+        "BILLEDQTY": "6.00 mtr",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "20mm-Blk-Rs.10/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "6.00 mtr",
+          "BILLEDQTY": "6.00 mtr",
+          "AMOUNT": 150
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/CA",
+    "VOUCHERNUMBER": 4,
+    "REFERENCE": "CA/4",
+    "MASTERID": 174201,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Superline Connected",
+        "RATE": "660.00/kgs",
+        "AMOUNT": 330,
+        "ACTUALQTY": "0.500 kgs",
+        "BILLEDQTY": "0.500 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "0.80-Blue-Rs.548/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.500 kgs",
+          "BILLEDQTY": "0.500 kgs",
+          "AMOUNT": 330
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "12.00/Nos",
+        "AMOUNT": 120,
+        "ACTUALQTY": "10 Nos",
+        "BILLEDQTY": "10 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "10 Nos",
+          "BILLEDQTY": "10 Nos",
+          "AMOUNT": 120
+        }
+      },
+      {
+        "STOCKITEMNAME": "Viaadi Hooks",
+        "RATE": "1.80/Nos",
+        "AMOUNT": 180,
+        "ACTUALQTY": "100 Nos",
+        "BILLEDQTY": "100 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "8-Rs.1060/- (1.06)",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "100 Nos",
+          "BILLEDQTY": "100 Nos",
+          "AMOUNT": 180
+        }
+      },
+      {
+        "STOCKITEMNAME": "Gd 50gms Bobbins",
+        "RATE": "50.00/Nos",
+        "AMOUNT": 50,
+        "ACTUALQTY": "1 Nos",
+        "BILLEDQTY": "1 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "0.32-Gr-Rs.31/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1 Nos",
+          "BILLEDQTY": "1 Nos",
+          "AMOUNT": 50
+        }
+      },
+      {
+        "STOCKITEMNAME": "Y- 3cm",
+        "RATE": "80.00/Nos",
+        "AMOUNT": 400,
+        "ACTUALQTY": "5 Nos",
+        "BILLEDQTY": "5 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "19.07.25-Rs.29/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "5 Nos",
+          "BILLEDQTY": "5 Nos",
+          "AMOUNT": 400
+        }
+      },
+      {
+        "STOCKITEMNAME": "Shading Net Kgs",
+        "RATE": "339.81/kgs",
+        "AMOUNT": 350,
+        "ACTUALQTY": "1.030 kgs",
+        "BILLEDQTY": "1.030 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": 20210723,
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Rishi-Rs.205/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "1.030 kgs",
+          "BILLEDQTY": "1.030 kgs",
+          "AMOUNT": 350
+        }
+      },
+      {
+        "STOCKITEMNAME": "0.75/35",
+        "RATE": "492.54/kgs",
+        "AMOUNT": 330,
+        "ACTUALQTY": "0.670 kgs",
+        "BILLEDQTY": "0.670 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "100md-Hari-Rs.255/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "0.670 kgs",
+          "BILLEDQTY": "0.670 kgs",
+          "AMOUNT": 330
+        }
+      },
+      {
+        "STOCKITEMNAME": "Shading Net Kgs",
+        "RATE": "358.40/kgs",
+        "AMOUNT": 1430,
+        "ACTUALQTY": "3.990 kgs",
+        "BILLEDQTY": "3.990 kgs",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": 20210723,
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Rishi-Rs.205/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "3.990 kgs",
+          "BILLEDQTY": "3.990 kgs",
+          "AMOUNT": 1430
+        }
+      }
+    ]
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 9,
+    "REFERENCE": "CR/9",
+    "MASTERID": 174202,
+    "ALLINVENTORYENTRIES.LIST": {
+      "STOCKITEMNAME": "Shading Net Kgs",
+      "RATE": "324.68/kgs",
+      "AMOUNT": 2500,
+      "ACTUALQTY": "7.700 kgs",
+      "BILLEDQTY": "7.700 kgs",
+      "BATCHALLOCATIONS.LIST": {
+        "MFDON": 20210723,
+        "GODOWNNAME": "Main Location",
+        "BATCHNAME": "Rishi-Rs.205/-",
+        "DESTINATIONGODOWNNAME": "Main Location",
+        "ACTUALQTY": "7.700 kgs",
+        "BILLEDQTY": "7.700 kgs",
+        "AMOUNT": 2500
+      }
+    }
+  },
+  {
+    "DATE": "20260401",
+    "VOUCHERTYPENAME": "Sales/Cr Mani",
+    "VOUCHERNUMBER": 10,
+    "REFERENCE": "CR/10",
+    "MASTERID": 174203,
+    "ALLINVENTORYENTRIES.LIST": [
+      {
+        "STOCKITEMNAME": "Superline Connected",
+        "RATE": "660.00/kgs",
+        "AMOUNT": 1339.8,
+        "ACTUALQTY": "2.030 kgs",
+        "BILLEDQTY": "2.030 kgs",
+        "BATCHALLOCATIONS.LIST": [
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "1.20-Wh-5*200-Rs.515/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "1.050 kgs",
+            "BILLEDQTY": "1.050 kgs",
+            "AMOUNT": 693
+          },
+          {
+            "MFDON": "",
+            "GODOWNNAME": "Main Location",
+            "BATCHNAME": "1.30-Wh-5*200-Rs.515/-",
+            "DESTINATIONGODOWNNAME": "Main Location",
+            "ACTUALQTY": "0.980 kgs",
+            "BILLEDQTY": "0.980 kgs",
+            "AMOUNT": 646.8
+          }
+        ]
+      },
+      {
+        "STOCKITEMNAME": "Gloves",
+        "RATE": "12.00/Nos",
+        "AMOUNT": 360,
+        "ACTUALQTY": "30 Nos",
+        "BILLEDQTY": "30 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "Blue-60gms-RR-Rs.8.50",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "30 Nos",
+          "BILLEDQTY": "30 Nos",
+          "AMOUNT": 360
+        }
+      },
+      {
+        "STOCKITEMNAME": "Viaadi Hooks",
+        "RATE": "11.80/Nos",
+        "AMOUNT": 1180,
+        "ACTUALQTY": "100 Nos",
+        "BILLEDQTY": "100 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "3-Rs.6843/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "100 Nos",
+          "BILLEDQTY": "100 Nos",
+          "AMOUNT": 1180
+        }
+      },
+      {
+        "STOCKITEMNAME": "Viaadi Hooks",
+        "RATE": "7.80/Nos",
+        "AMOUNT": 780,
+        "ACTUALQTY": "100 Nos",
+        "BILLEDQTY": "100 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "4-Rs.4960/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "100 Nos",
+          "BILLEDQTY": "100 Nos",
+          "AMOUNT": 780
+        }
+      },
+      {
+        "STOCKITEMNAME": "Anchor Gaff Hooks",
+        "RATE": "120.00/Nos",
+        "AMOUNT": 240,
+        "ACTUALQTY": "2 Nos",
+        "BILLEDQTY": "2 Nos",
+        "BATCHALLOCATIONS.LIST": {
+          "MFDON": "",
+          "GODOWNNAME": "Main Location",
+          "BATCHNAME": "6/0-6mm-Beko-Rs.75/-",
+          "DESTINATIONGODOWNNAME": "Main Location",
+          "ACTUALQTY": "2 Nos",
+          "BILLEDQTY": "2 Nos",
+          "AMOUNT": 240
+        }
+      }
+    ]
+  }
+]

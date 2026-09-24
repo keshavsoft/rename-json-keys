@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rename-json-keys — Interactive Playground & Documentation</title>
+  <title>rename-json-keys — Interactive Key Normalization Playground &amp; Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: rgba(22, 30, 49, 0.75);
+      --bg: #070b14;
+      --card-bg: rgba(16, 24, 40, 0.85);
       --card-border: rgba(255, 255, 255, 0.08);
       --accent: #38bdf8;
       --accent-glow: rgba(56, 189, 248, 0.25);
-      --accent-2: #818cf8;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
+      --accent-purple: #818cf8;
       --success: #34d399;
-      --code-bg: #050811;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --code-bg: #030712;
     }
 
     * {
@@ -32,20 +32,97 @@
       color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
-      padding: 2.5rem 1.5rem;
       background-image: 
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
         radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 140, 248, 0.08), transparent);
     }
 
-    .container {
-      max-width: 1280px;
+    /* Unified Story Nav */
+    .story-global-nav {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 11, 20, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.65rem 1.5rem;
+    }
+
+    .story-nav-inner {
+      max-width: 1320px;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .story-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .story-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .brand-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .story-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .story-nav-link {
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .story-nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .story-nav-link.active {
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
     }
 
     header {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .badge {
@@ -57,40 +134,124 @@
       background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.3);
       color: var(--accent);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 800;
       background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-size: 1rem;
       color: var(--text-muted);
-      max-width: 720px;
-      margin: 0 auto;
+      max-width: 760px;
+      margin: 0 auto 1.5rem auto;
       line-height: 1.6;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+    .repo-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
     }
 
-    @media (max-width: 900px) {
-      .grid {
+    .repo-badge-link {
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .repo-badge-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Preset Toolbar */
+    .preset-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .preset-btns {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+
+    .btn-preset {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-preset:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .btn-preset.active {
+      background: var(--accent);
+      color: #04101e;
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    /* 3-Column Responsive Playground */
+    .playground-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .playground-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -98,81 +259,60 @@
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      border-radius: 14px;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .card-title {
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       font-weight: 700;
+      color: #fff;
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text);
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    button {
-      background: var(--accent);
-      color: #04101e;
-      border: none;
-      font-family: inherit;
-      font-weight: 700;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: all 0.2s ease;
-      box-shadow: 0 0 15px var(--accent-glow);
     }
 
-    button:hover {
-      background: #7dd3fc;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
+    .btn-action {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--text);
-      box-shadow: none;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
     }
 
-    textarea {
+    textarea, pre {
       width: 100%;
       height: 380px;
       background: var(--code-bg);
-      color: #e2e8f0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1rem;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.85rem;
       font-family: 'Fira Code', monospace;
-      font-size: 0.88rem;
-      line-height: 1.5;
+      font-size: 0.8rem;
+      color: #e2e8f0;
       resize: vertical;
       outline: none;
-      transition: border-color 0.2s ease;
+      line-height: 1.45;
+      overflow-y: auto;
     }
 
     textarea:focus {
@@ -181,214 +321,459 @@
     }
 
     pre {
-      width: 100%;
-      height: 380px;
-      background: var(--code-bg);
-      color: #38bdf8;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1rem;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      overflow: auto;
-      white-space: pre;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
 
-    .stats-bar {
+    .stats-footer {
+      margin-top: 0.75rem;
       display: flex;
-      gap: 1.5rem;
-      padding: 0.8rem 1.2rem;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 10px;
-      margin-top: 1rem;
-      font-size: 0.88rem;
+      justify-content: space-between;
+      font-size: 0.78rem;
       color: var(--text-muted);
-    }
-
-    .stats-bar strong {
-      color: var(--text);
     }
 
     .doc-section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       margin-top: 2rem;
-      line-height: 1.7;
     }
 
     .doc-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+
+    .doc-section p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
     }
 
     .code-block {
       background: var(--code-bg);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 0.85rem 1rem;
       font-family: 'Fira Code', monospace;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin: 1rem 0;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      margin-bottom: 1.25rem;
       overflow-x: auto;
     }
   </style>
 </head>
 <body>
 
+  <!-- Unified Story Global Nav -->
+  <nav class="story-global-nav">
+    <div class="story-nav-inner">
+      <div class="story-nav-brand">
+        <span class="story-pill">Step 2</span>
+        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="brand-title">JSON Transform Suite</a>
+      </div>
+      <div class="story-nav-links">
+        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="story-nav-link">🚀 Workbench</a>
+        <a href="https://keshavsoft.github.io/select-json-by-json/" class="story-nav-link">⚡ 1. Select</a>
+        <a href="index.html" class="story-nav-link active">🏷️ 2. Rename</a>
+        <a href="https://keshavsoft.github.io/map-json-by-json/" class="story-nav-link">🗺️ 3. Map</a>
+        <a href="https://keshavsoft.github.io/json-transform-recipes/4-table.html" class="story-nav-link">📊 4. Table UI</a>
+        <a href="https://keshavsoft.github.io/json-transform-recipes/repos.html" class="story-nav-link">🌐 Repos &amp; Architecture</a>
+        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" class="story-nav-link">🐙 GitHub</a>
+        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" class="story-nav-link">📦 npm</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
     <header>
-      <div class="badge">Pure JSON Utility</div>
+      <div class="badge">
+        <span>🏷️</span> Step 2: Key Normalization Playground
+      </div>
       <h1>rename-json-keys</h1>
       <p class="subtitle">
-        Recursively rename ugly enterprise keys to clean, readable names across nested objects and arrays with zero data mutation.
+        Select a sample JSON dataset below. Both the source and dictionary load instantly, and the normalized output renders in real-time with zero data mutation.
       </p>
+
+      <div class="repo-badges">
+        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" class="repo-badge-link">
+          <span>🐙</span> GitHub Repo
+        </a>
+        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" class="repo-badge-link">
+          <span>📦</span> npm package v1.0.0
+        </a>
+        <a href="https://keshavsoft.github.io/json-transform-recipes/repos.html" class="repo-badge-link">
+          <span>🌐</span> Ecosystem Directory
+        </a>
+        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="repo-badge-link">
+          <span>🚀</span> Pipeline Workbench
+        </a>
+      </div>
     </header>
 
-    <div class="grid">
-      <!-- Input 1: Source Data -->
+    <!-- Preset Selector Bar -->
+    <div class="preset-toolbar">
+      <div class="preset-btns">
+        <span class="preset-label">Select JSON:</span>
+        <button class="btn-preset active" id="btnPresetInvoices">Invoices &amp; Batch Allocations</button>
+        <button class="btn-preset" id="btnPresetOrders">E-Commerce Orders</button>
+        <button class="btn-preset" id="btnPresetLogistics">Logistics Waybills</button>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <span id="statLatency" style="color: var(--success); font-size: 0.82rem; font-weight: 700;">Latency: 0.00 ms</span>
+      </div>
+    </div>
+
+    <!-- 3-Column Live Playground -->
+    <div class="playground-grid">
+      <!-- 1. Input Data -->
       <div class="card">
         <div class="card-header">
-          <span class="card-title">1. Source JSON Data</span>
-          <button class="btn-secondary" id="btnResetData">Reset Sample</button>
+          <span class="card-title"><span>📥</span> 1. Source JSON</span>
+          <div style="display: flex; gap: 0.4rem;">
+            <button class="btn-action" id="btnCopyInput">📋 Copy</button>
+            <button class="btn-action" id="btnFormatInput">✨ Format</button>
+          </div>
         </div>
         <textarea id="inputData" spellcheck="false"></textarea>
+        <div class="stats-footer">
+          <span>Input records: <strong id="statInputCount">1</strong></span>
+          <span>Source of Truth: Data</span>
+        </div>
       </div>
 
-      <!-- Input 2: Key Mapping -->
+      <!-- 2. Mapping Dictionary -->
       <div class="card">
         <div class="card-header">
-          <span class="card-title">2. Key Mapping Dictionary</span>
-          <button class="btn-secondary" id="btnResetKeys">Reset Map</button>
+          <span class="card-title"><span>🏷️</span> 2. Rename Dictionary</span>
+          <div style="display: flex; gap: 0.4rem;">
+            <button class="btn-action" id="btnCopyKeys">📋 Copy</button>
+            <button class="btn-action" id="btnFormatKeys">✨ Format</button>
+          </div>
         </div>
         <textarea id="inputKeys" spellcheck="false"></textarea>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <button id="btnTransform" style="font-size: 1.05rem; padding: 0.8rem 2.2rem;">
-        ⚡ Run renameJsonKeys()
-      </button>
-    </div>
-
-    <!-- Output -->
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title" style="color: var(--success);">
-          3. Renamed Output JSON
-        </span>
-        <div class="card-actions">
-          <button class="btn-secondary" id="btnCopyOutput">📋 Copy JSON</button>
+        <div class="stats-footer">
+          <span>Mapping rules: <strong id="statRulesCount">0</strong></span>
+          <span>Supports Scoped <code>$as</code></span>
         </div>
       </div>
-      <pre id="outputJson"></pre>
-      <div class="stats-bar">
-        <span>Execution Time: <strong id="statTime">0 ms</strong></span>
-        <span>Original Keys Replaced: <strong id="statCount">0</strong></span>
+
+      <!-- 3. Live Renamed Result -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" style="color: var(--success);"><span>✨</span> 3. Live Renamed Output</span>
+          <button class="btn-action" id="btnCopyOutput">📋 Copy</button>
+        </div>
+        <pre id="outputJson" style="color: var(--success);"></pre>
+        <div class="stats-footer">
+          <span>Keys replaced: <strong id="statCount">0</strong></span>
+          <span style="color: var(--success);">Instant Reactive Render</span>
+        </div>
       </div>
     </div>
 
-    <!-- Documentation Section -->
+    <!-- Quick API Guide -->
     <div class="doc-section">
       <h2>Quick API Guide</h2>
       <p>Install via npm:</p>
       <div class="code-block">npm install rename-json-keys</div>
       
-      <p>Import and use anywhere in Node.js or modern frontend frameworks:</p>
+      <p>Import and execute with zero dependencies in Node.js, modern bundlers, or browsers:</p>
       <div class="code-block">import { renameJsonKeys } from "rename-json-keys";
 
-// Call with positional arguments or KeshavSoft { inData, inKeys } object
-const clean = renameJsonKeys(sourceData, {
-  "ITEM_IDENTIFIER": "id",
-  "NESTED_INVENTORY_COLLECTION": "items"
+const clean = renameJsonKeys(vouchers, {
+  "DATE": "date",
+  "ALLINVENTORYENTRIES.LIST": "items",
+  "STOCKITEMNAME": "itemName",
+  "BATCHALLOCATIONS.LIST": "batches",
+  "MFDON": "mfdOn",
+  "GODOWNNAME": "godownName"
 });</div>
+
+      <p>Load directly in browsers from jsDelivr CDN:</p>
+      <div class="code-block">&lt;script type="module"&gt;
+  import { renameJsonKeys } from "https://cdn.jsdelivr.net/gh/keshavsoft/rename-json-keys@main/docs/dist/min.js";
+  const result = renameJsonKeys(data, keyMap);
+&lt;/script&gt;</div>
     </div>
+
   </div>
 
   <script type="module">
-    import { renameJsonKeys } from "../src/index.js";
+    // Load local engine or fallback to CDN / standalone
+    let renameJsonKeys;
+    try {
+      const mod = await import("../src/index.js");
+      renameJsonKeys = mod.renameJsonKeys || mod.default;
+    } catch (e) {
+      try {
+        const cdnMod = await import("https://cdn.jsdelivr.net/gh/keshavsoft/rename-json-keys@main/src/index.js");
+        renameJsonKeys = cdnMod.renameJsonKeys || cdnMod.default;
+      } catch (err) {
+        // Pure standalone fallback engine
+        const isObject = v => v !== null && typeof v === "object";
+        const isPlainObject = v => isObject(v) && !Array.isArray(v);
+        const forArray = (arr, keys, root) => arr.map(item => renameVal(item, keys, root));
+        const forObj = (obj, keys = {}, root) => {
+          if (!isPlainObject(obj)) return obj;
+          const rootKeys = root ?? keys;
+          const res = {};
+          Object.entries(obj).forEach(([k, val]) => {
+            const rule = keys[k] ?? rootKeys?.[k];
+            let targetKey = k;
+            let childKeys = rootKeys;
+            if (typeof rule === "string") {
+              targetKey = rule;
+            } else if (isPlainObject(rule)) {
+              targetKey = rule.$as || rule.as || k;
+              childKeys = rule;
+            }
+            res[targetKey] = renameVal(val, childKeys, rootKeys);
+          });
+          return res;
+        };
+        const renameVal = (v, keys, root) => {
+          if (!isObject(v)) return v;
+          if (Array.isArray(v)) return forArray(v, keys, root);
+          return forObj(v, keys, root);
+        };
+        renameJsonKeys = (data, keys) => renameVal(data, keys);
+      }
+    }
 
-    const defaultData = [
-      {
-        "VOUCHER_ID": 101,
-        "TRANSACTION_DATE": "2026-09-24",
-        "INVENTORY_ENTRIES_LIST": [
+    // Datasets
+    const datasets = {
+      invoices: {
+        data: [
           {
-            "PRODUCT_CODE": "P-900",
-            "UNIT_RATE": 150,
-            "AMOUNT_VALUE": 1500,
-            "BATCH_ALLOCATIONS_LIST": [
-              { "BATCH_CODE": "B-Alpha", "QTY_VALUE": 10 }
+            "DATE": "20260401",
+            "VOUCHERTYPENAME": "Sales/CA",
+            "VOUCHERNUMBER": 1,
+            "REFERENCE": "CA/1",
+            "MASTERID": 174169,
+            "ALLINVENTORYENTRIES.LIST": [
+              {
+                "STOCKITEMNAME": "Shading Net Kgs",
+                "RATE": "280.90/kgs",
+                "AMOUNT": 1280.9,
+                "ACTUALQTY": "4.560 kgs",
+                "BILLEDQTY": "4.560 kgs",
+                "BATCHALLOCATIONS.LIST": [
+                  {
+                    "MFDON": 20210723,
+                    "GODOWNNAME": "Main Location",
+                    "BATCHNAME": "Rishi-Rs.205/-",
+                    "DESTINATIONGODOWNNAME": "Main Location",
+                    "ACTUALQTY": "3.560 kgs",
+                    "BILLEDQTY": "3.560 kgs",
+                    "AMOUNT": 1000
+                  },
+                  {
+                    "MFDON": 20240509,
+                    "GODOWNNAME": "Main Location",
+                    "BATCHNAME": "Bahnu-Fortune-Rs.178/-",
+                    "DESTINATIONGODOWNNAME": "Main Location",
+                    "ACTUALQTY": "1.000 kgs",
+                    "BILLEDQTY": "1.000 kgs",
+                    "AMOUNT": 280.9
+                  }
+                ]
+              },
+              {
+                "STOCKITEMNAME": "ROPE",
+                "RATE": "312.50/kgs",
+                "AMOUNT": 100,
+                "ACTUALQTY": "0.320 kgs",
+                "BILLEDQTY": "0.320 kgs",
+                "BATCHALLOCATIONS.LIST": {
+                  "MFDON": "",
+                  "GODOWNNAME": "Main Location",
+                  "BATCHNAME": "Tuf-Rs.170",
+                  "DESTINATIONGODOWNNAME": "Main Location",
+                  "ACTUALQTY": "0.320 kgs",
+                  "BILLEDQTY": "0.320 kgs",
+                  "AMOUNT": 100
+                }
+              }
             ]
           }
-        ]
+        ],
+        keys: {
+          "DATE": "date",
+          "VOUCHERTYPENAME": "voucherType",
+          "VOUCHERNUMBER": "voucherNumber",
+          "REFERENCE": "reference",
+          "MASTERID": "masterId",
+          "ALLINVENTORYENTRIES.LIST": "inventoryEntries",
+          "STOCKITEMNAME": "stockItemName",
+          "RATE": "rate",
+          "AMOUNT": "amount",
+          "ACTUALQTY": "actualQty",
+          "BILLEDQTY": "billedQty",
+          "BATCHALLOCATIONS.LIST": "batchAllocations",
+          "MFDON": "mfdOn",
+          "GODOWNNAME": "godownName",
+          "BATCHNAME": "batchName",
+          "DESTINATIONGODOWNNAME": "destinationGodownName"
+        }
+      },
+      orders: {
+        data: [
+          {
+            "ORDER_IDENTIFIER": "ORD-99120",
+            "TIMESTAMP_CREATED": "2026-09-24T18:00:00Z",
+            "PURCHASER_NAME": "Sarah Jenkins",
+            "SHIPPING_LOCATION": "Austin, TX",
+            "ORDER_ITEMS_COLLECTION": [
+              {
+                "ITEM_SKU_CODE": "SKU-OPT-100",
+                "PRODUCT_NAME": "Optical Sensor Unit",
+                "UNIT_COUNT": 10,
+                "UNIT_PRICE_USD": 85.00
+              }
+            ]
+          }
+        ],
+        keys: {
+          "ORDER_IDENTIFIER": "orderId",
+          "TIMESTAMP_CREATED": "createdAt",
+          "PURCHASER_NAME": "customerName",
+          "SHIPPING_LOCATION": "shippingCity",
+          "ORDER_ITEMS_COLLECTION": "items",
+          "ITEM_SKU_CODE": "sku",
+          "PRODUCT_NAME": "title",
+          "UNIT_COUNT": "quantity",
+          "UNIT_PRICE_USD": "price"
+        }
+      },
+      logistics: {
+        data: [
+          {
+            "WAYBILL_REFERENCE": "WB-88190",
+            "DEPARTURE_HUB": "Central Warehouse Hub A",
+            "ARRIVAL_DEPOT": "Metro Distribution Depot",
+            "DISPATCH_DRIVER": "Marcus Vance",
+            "CONTAINER_MANIFEST_LIST": [
+              { "CONTAINER_CODE": "C-901", "GROSS_WEIGHT_KG": 4200, "SEAL_TAG": "SL-9941" },
+              { "CONTAINER_CODE": "C-902", "GROSS_WEIGHT_KG": 3150, "SEAL_TAG": "SL-9942" }
+            ]
+          }
+        ],
+        keys: {
+          "WAYBILL_REFERENCE": "waybill",
+          "DEPARTURE_HUB": "origin",
+          "ARRIVAL_DEPOT": "destination",
+          "DISPATCH_DRIVER": "driver",
+          "CONTAINER_MANIFEST_LIST": "containers",
+          "CONTAINER_CODE": "containerId",
+          "GROSS_WEIGHT_KG": "weightKg",
+          "SEAL_TAG": "sealNumber"
+        }
       }
-    ];
-
-    const defaultKeys = {
-      "VOUCHER_ID": "id",
-      "TRANSACTION_DATE": "date",
-      "INVENTORY_ENTRIES_LIST": "items",
-      "PRODUCT_CODE": "product",
-      "UNIT_RATE": "rate",
-      "AMOUNT_VALUE": "amount",
-      "BATCH_ALLOCATIONS_LIST": "batches",
-      "BATCH_CODE": "batch",
-      "QTY_VALUE": "qty"
     };
 
-    const inputDataEl = document.getElementById("inputData");
-    const inputKeysEl = document.getElementById("inputKeys");
-    const outputJsonEl = document.getElementById("outputJson");
-    const statTimeEl = document.getElementById("statTime");
-    const statCountEl = document.getElementById("statCount");
+    const inputData = document.getElementById("inputData");
+    const inputKeys = document.getElementById("inputKeys");
+    const outputJson = document.getElementById("outputJson");
+    const statLatency = document.getElementById("statLatency");
+    const statCount = document.getElementById("statCount");
+    const statInputCount = document.getElementById("statInputCount");
+    const statRulesCount = document.getElementById("statRulesCount");
 
-    inputDataEl.value = JSON.stringify(defaultData, null, 2);
-    inputKeysEl.value = JSON.stringify(defaultKeys, null, 2);
+    const btnPresetInvoices = document.getElementById("btnPresetInvoices");
+    const btnPresetOrders = document.getElementById("btnPresetOrders");
+    const btnPresetLogistics = document.getElementById("btnPresetLogistics");
+    const presetButtons = [btnPresetInvoices, btnPresetOrders, btnPresetLogistics];
 
-    function runTransform() {
+    function setActivePreset(activeBtn) {
+      presetButtons.forEach(btn => btn?.classList.remove("active"));
+      activeBtn?.classList.add("active");
+    }
+
+    function loadPreset(presetKey, activeBtn) {
+      setActivePreset(activeBtn);
+      const sel = datasets[presetKey];
+      inputData.value = JSON.stringify(sel.data, null, 2);
+      inputKeys.value = JSON.stringify(sel.keys, null, 2);
+      render();
+    }
+
+    function render() {
       try {
-        const data = JSON.parse(inputDataEl.value);
-        const keys = JSON.parse(inputKeysEl.value);
+        const data = JSON.parse(inputData.value);
+        const keys = JSON.parse(inputKeys.value);
+
+        statInputCount.textContent = Array.isArray(data) ? data.length : 1;
+        statRulesCount.textContent = Object.keys(keys).length;
 
         const t0 = performance.now();
         const result = renameJsonKeys(data, keys);
         const t1 = performance.now();
 
-        outputJsonEl.textContent = JSON.stringify(result, null, 2);
-        statTimeEl.textContent = `${(t1 - t0).toFixed(2)} ms`;
-        statCountEl.textContent = Object.keys(keys).length;
-      } catch (err) {
-        outputJsonEl.textContent = `❌ Error: ${err.message}`;
-        statTimeEl.textContent = "-";
+        outputJson.textContent = JSON.stringify(result, null, 2);
+        statLatency.textContent = `Latency: ${(t1 - t0).toFixed(2)} ms`;
+        statCount.textContent = Object.keys(keys).length;
+      } catch (e) {
+        outputJson.textContent = `// Error: ${e.message}`;
+        statLatency.textContent = "Error";
       }
     }
 
-    document.getElementById("btnTransform").addEventListener("click", runTransform);
+    // Preset button events
+    btnPresetInvoices.addEventListener("click", () => loadPreset("invoices", btnPresetInvoices));
+    btnPresetOrders.addEventListener("click", () => loadPreset("orders", btnPresetOrders));
+    btnPresetLogistics.addEventListener("click", () => loadPreset("logistics", btnPresetLogistics));
 
-    document.getElementById("btnResetData").addEventListener("click", () => {
-      inputDataEl.value = JSON.stringify(defaultData, null, 2);
-      runTransform();
-    });
+    // Reactive input listeners
+    let debounceTimer;
+    const triggerDebounced = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(render, 150);
+    };
+    inputData.addEventListener("input", triggerDebounced);
+    inputKeys.addEventListener("input", triggerDebounced);
 
-    document.getElementById("btnResetKeys").addEventListener("click", () => {
-      inputKeysEl.value = JSON.stringify(defaultKeys, null, 2);
-      runTransform();
-    });
-
-    document.getElementById("btnCopyOutput").addEventListener("click", () => {
-      navigator.clipboard.writeText(outputJsonEl.textContent).then(() => {
-        alert("Renamed JSON copied to clipboard!");
+    // Copy buttons
+    function attachCopy(btnId, targetEl) {
+      document.getElementById(btnId).addEventListener("click", () => {
+        const text = targetEl.value || targetEl.textContent;
+        navigator.clipboard.writeText(text);
+        const btn = document.getElementById(btnId);
+        const orig = btn.textContent;
+        btn.textContent = "✓ Copied!";
+        setTimeout(() => btn.textContent = orig, 1500);
       });
+    }
+
+    attachCopy("btnCopyInput", inputData);
+    attachCopy("btnCopyKeys", inputKeys);
+    attachCopy("btnCopyOutput", outputJson);
+
+    // Format buttons
+    document.getElementById("btnFormatInput").addEventListener("click", () => {
+      try {
+        inputData.value = JSON.stringify(JSON.parse(inputData.value), null, 2);
+        render();
+      } catch (e) {
+        alert("Invalid JSON: " + e.message);
+      }
     });
 
-    // Run initially
-    runTransform();
+    document.getElementById("btnFormatKeys").addEventListener("click", () => {
+      try {
+        inputKeys.value = JSON.stringify(JSON.parse(inputKeys.value), null, 2);
+        render();
+      } catch (e) {
+        alert("Invalid JSON: " + e.message);
+      }
+    });
+
+    // Initial load
+    loadPreset("invoices", btnPresetInvoices);
   </script>
 </body>
 </html>
