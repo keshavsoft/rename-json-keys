@@ -1,0 +1,43 @@
+{
+  "name": "rename-json-keys",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Recursively rename JSON keys using a mapping dictionary or spec without changing data structure.",
+  "main": "index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "default": "./index.js"
+    },
+    "./v1": "./src/v1/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "rename-json-keys",
+    "rename-keys",
+    "json-keys",
+    "map-keys",
+    "transform-keys",
+    "alias-keys"
+  ],
+  "author": "KeshavSoft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavsoft/rename-json-keys.git"
+  },
+  "bugs": {
+    "url": "https://github.com/keshavsoft/rename-json-keys/issues"
+  },
+  "homepage": "https://github.com/keshavsoft/rename-json-keys#readme"
+}

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rename-json-keys — Interactive Playground & Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --accent-2: #818cf8;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --success: #34d399;
+      --code-bg: #050811;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 140, 248, 0.08), transparent);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    button {
+      background: var(--accent);
+      color: #04101e;
+      border: none;
+      font-family: inherit;
+      font-weight: 700;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    button:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    textarea {
+      width: 100%;
+      height: 380px;
+      background: var(--code-bg);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    pre {
+      width: 100%;
+      height: 380px;
+      background: var(--code-bg);
+      color: #38bdf8;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      overflow: auto;
+      white-space: pre;
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .stats-bar strong {
+      color: var(--text);
+    }
+
+    .doc-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      line-height: 1.7;
+    }
+
+    .doc-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">Pure JSON Utility</div>
+      <h1>rename-json-keys</h1>
+      <p class="subtitle">
+        Recursively rename ugly enterprise keys to clean, readable names across nested objects and arrays with zero data mutation.
+      </p>
+    </header>
+
+    <div class="grid">
+      <!-- Input 1: Source Data -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">1. Source JSON Data</span>
+          <button class="btn-secondary" id="btnResetData">Reset Sample</button>
+        </div>
+        <textarea id="inputData" spellcheck="false"></textarea>
+      </div>
+
+      <!-- Input 2: Key Mapping -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">2. Key Mapping Dictionary</span>
+          <button class="btn-secondary" id="btnResetKeys">Reset Map</button>
+        </div>
+        <textarea id="inputKeys" spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <button id="btnTransform" style="font-size: 1.05rem; padding: 0.8rem 2.2rem;">
+        ⚡ Run renameJsonKeys()
+      </button>
+    </div>
+
+    <!-- Output -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title" style="color: var(--success);">
+          3. Renamed Output JSON
+        </span>
+        <div class="card-actions">
+          <button class="btn-secondary" id="btnCopyOutput">📋 Copy JSON</button>
+        </div>
+      </div>
+      <pre id="outputJson"></pre>
+      <div class="stats-bar">
+        <span>Execution Time: <strong id="statTime">0 ms</strong></span>
+        <span>Original Keys Replaced: <strong id="statCount">0</strong></span>
+      </div>
+    </div>
+
+    <!-- Documentation Section -->
+    <div class="doc-section">
+      <h2>Quick API Guide</h2>
+      <p>Install via npm:</p>
+      <div class="code-block">npm install rename-json-keys</div>
+      
+      <p>Import and use anywhere in Node.js or modern frontend frameworks:</p>
+      <div class="code-block">import { renameJsonKeys } from "rename-json-keys";
+
+// Call with positional arguments or KeshavSoft { inData, inKeys } object
+const clean = renameJsonKeys(sourceData, {
+  "ITEM_IDENTIFIER": "id",
+  "NESTED_INVENTORY_COLLECTION": "items"
+});</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { renameJsonKeys } from "../src/index.js";
+
+    const defaultData = [
+      {
+        "VOUCHER_ID": 101,
+        "TRANSACTION_DATE": "2026-09-24",
+        "INVENTORY_ENTRIES_LIST": [
+          {
+            "PRODUCT_CODE": "P-900",
+            "UNIT_RATE": 150,
+            "AMOUNT_VALUE": 1500,
+            "BATCH_ALLOCATIONS_LIST": [
+              { "BATCH_CODE": "B-Alpha", "QTY_VALUE": 10 }
+            ]
+          }
+        ]
+      }
+    ];
+
+    const defaultKeys = {
+      "VOUCHER_ID": "id",
+      "TRANSACTION_DATE": "date",
+      "INVENTORY_ENTRIES_LIST": "items",
+      "PRODUCT_CODE": "product",
+      "UNIT_RATE": "rate",
+      "AMOUNT_VALUE": "amount",
+      "BATCH_ALLOCATIONS_LIST": "batches",
+      "BATCH_CODE": "batch",
+      "QTY_VALUE": "qty"
+    };
+
+    const inputDataEl = document.getElementById("inputData");
+    const inputKeysEl = document.getElementById("inputKeys");
+    const outputJsonEl = document.getElementById("outputJson");
+    const statTimeEl = document.getElementById("statTime");
+    const statCountEl = document.getElementById("statCount");
+
+    inputDataEl.value = JSON.stringify(defaultData, null, 2);
+    inputKeysEl.value = JSON.stringify(defaultKeys, null, 2);
+
+    function runTransform() {
+      try {
+        const data = JSON.parse(inputDataEl.value);
+        const keys = JSON.parse(inputKeysEl.value);
+
+        const t0 = performance.now();
+        const result = renameJsonKeys(data, keys);
+        const t1 = performance.now();
+
+        outputJsonEl.textContent = JSON.stringify(result, null, 2);
+        statTimeEl.textContent = `${(t1 - t0).toFixed(2)} ms`;
+        statCountEl.textContent = Object.keys(keys).length;
+      } catch (err) {
+        outputJsonEl.textContent = `❌ Error: ${err.message}`;
+        statTimeEl.textContent = "-";
+      }
+    }
+
+    document.getElementById("btnTransform").addEventListener("click", runTransform);
+
+    document.getElementById("btnResetData").addEventListener("click", () => {
+      inputDataEl.value = JSON.stringify(defaultData, null, 2);
+      runTransform();
+    });
+
+    document.getElementById("btnResetKeys").addEventListener("click", () => {
+      inputKeysEl.value = JSON.stringify(defaultKeys, null, 2);
+      runTransform();
+    });
+
+    document.getElementById("btnCopyOutput").addEventListener("click", () => {
+      navigator.clipboard.writeText(outputJsonEl.textContent).then(() => {
+        alert("Renamed JSON copied to clipboard!");
+      });
+    });
+
+    // Run initially
+    runTransform();
+  </script>
+</body>
+</html>
