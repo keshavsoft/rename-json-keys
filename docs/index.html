@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rename-json-keys — Interactive Key Normalization Playground &amp; Docs</title>
+  <title>rename-json-keys — Documentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 140, 248, 0.08), transparent);
     }
 
-    /* Unified Story Nav */
+    /* Global Nav */
     .story-global-nav {
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(7, 11, 20, 0.92);
@@ -49,7 +49,7 @@
     }
 
     .story-nav-inner {
-      max-width: 1320px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -115,275 +115,191 @@
     }
 
     .container {
-      max-width: 1320px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 3rem 1.5rem 5rem;
     }
 
-    header {
+    .hero {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3.5rem;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.35rem 0.9rem;
-      border-radius: 9999px;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--accent);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
     }
 
     h1 {
-      font-size: 2.6rem;
+      font-size: 2.75rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 760px;
-      margin: 0 auto 1.5rem auto;
+      max-width: 650px;
+      margin: 0 auto 2rem;
       line-height: 1.6;
     }
 
-    .repo-badges {
+    .cta-group {
       display: flex;
       justify-content: center;
-      gap: 0.6rem;
+      gap: 1rem;
       flex-wrap: wrap;
       margin-bottom: 1.5rem;
     }
 
-    .repo-badge-link {
-      padding: 0.3rem 0.75rem;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-    }
-
-    .repo-badge-link:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border-color: var(--accent);
-    }
-
-    /* Preset Toolbar */
-    .preset-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 0.75rem 1.25rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .preset-btns {
-      display: flex;
       gap: 0.5rem;
-      align-items: center;
-      flex-wrap: wrap;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
-    .preset-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-right: 0.25rem;
+    .btn-primary {
+      background: var(--accent);
+      color: #04101e;
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
-    .btn-preset {
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
       background: rgba(255, 255, 255, 0.06);
       color: var(--text);
       border: 1px solid var(--card-border);
-      padding: 0.45rem 0.85rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
     }
 
-    .btn-preset:hover {
+    .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.12);
       color: #fff;
     }
 
-    .btn-preset.active {
-      background: var(--accent);
-      color: #04101e;
-      border-color: var(--accent);
-      box-shadow: 0 0 12px var(--accent-glow);
-    }
-
-    /* 3-Column Responsive Playground */
-    .playground-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 1024px) {
-      .playground-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+    /* Content Cards */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(12px);
     }
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-title {
-      font-size: 0.92rem;
+    .card h2 {
+      font-size: 1.4rem;
       font-weight: 700;
       color: #fff;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.6rem;
     }
 
-    .btn-action {
-      background: rgba(255, 255, 255, 0.08);
+    .card p {
       color: var(--text-muted);
-      border: 1px solid var(--card-border);
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-action:hover {
-      background: rgba(255, 255, 255, 0.16);
-      color: #fff;
-    }
-
-    textarea, pre {
-      width: 100%;
-      height: 380px;
-      background: var(--code-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 0.85rem;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.8rem;
-      color: #e2e8f0;
-      resize: vertical;
-      outline: none;
-      line-height: 1.45;
-      overflow-y: auto;
-    }
-
-    textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px var(--accent-glow);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
     }
 
     pre {
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-
-    .stats-footer {
-      margin-top: 0.75rem;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .doc-section {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.75rem;
-      margin-top: 2rem;
-    }
-
-    .doc-section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
-
-    .doc-section p {
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
-    }
-
-    .code-block {
       background: var(--code-bg);
       border: 1px solid var(--card-border);
       border-radius: 8px;
-      padding: 0.85rem 1rem;
+      padding: 1.25rem;
+      overflow-x: auto;
       font-family: 'Fira Code', monospace;
-      font-size: 0.82rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
       color: #e2e8f0;
       margin-bottom: 1.25rem;
-      overflow-x: auto;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .feature-item h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-item p {
+      margin-bottom: 0;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Unified Story Global Nav -->
+  <!-- Global Nav -->
   <nav class="story-global-nav">
     <div class="story-nav-inner">
       <div class="story-nav-brand">
         <span class="story-pill">Step 2</span>
-        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="brand-title">JSON Transform Suite</a>
+        <a href="index.html" class="brand-title">rename-json-keys</a>
       </div>
       <div class="story-nav-links">
-        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="story-nav-link">🚀 Workbench</a>
+        <a href="index.html" class="story-nav-link active">📖 Docs Home</a>
+        <a href="playground.html" class="story-nav-link">🎮 Playground</a>
         <a href="https://keshavsoft.github.io/select-json-by-json/" class="story-nav-link">⚡ 1. Select</a>
-        <a href="index.html" class="story-nav-link active">🏷️ 2. Rename</a>
         <a href="https://keshavsoft.github.io/normalize-json-by-json/" class="story-nav-link">📐 3. Normalize</a>
         <a href="https://keshavsoft.github.io/map-json-by-json/" class="story-nav-link">🗺️ 4. Map</a>
-        <a href="https://keshavsoft.github.io/json-transform-recipes/4-table.html" class="story-nav-link">📊 5. Table UI</a>
-        <a href="https://keshavsoft.github.io/json-transform-recipes/repos.html" class="story-nav-link">🌐 Repos &amp; Architecture</a>
         <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" class="story-nav-link">🐙 GitHub</a>
         <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" class="story-nav-link">📦 npm</a>
       </div>
@@ -391,390 +307,124 @@
   </nav>
 
   <div class="container">
-    <header>
+    <header class="hero">
       <div class="badge">
-        <span>🏷️</span> Step 2: Key Normalization Playground
+        <span>🏷️</span> Step 2: Key Normalization
       </div>
       <h1>rename-json-keys</h1>
       <p class="subtitle">
-        Select a sample JSON dataset below. Both the source and dictionary load instantly, and the normalized output renders in real-time with zero data mutation.
+        Recursively rename keys in any JSON structure using a simple dictionary map. Zero dependencies, 100% data preservation.
       </p>
 
-      <div class="repo-badges">
-        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" class="repo-badge-link">
-          <span>🐙</span> GitHub Repo
+      <div class="cta-group">
+        <a href="playground.html" class="btn btn-primary">
+          <span>🎮</span> Open Interactive Playground
         </a>
-        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" class="repo-badge-link">
-          <span>📦</span> npm package v1.0.0
+        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" class="btn btn-secondary">
+          <span>🐙</span> GitHub Repository
         </a>
-        <a href="https://keshavsoft.github.io/json-transform-recipes/repos.html" class="repo-badge-link">
-          <span>🌐</span> Ecosystem Directory
-        </a>
-        <a href="https://keshavsoft.github.io/json-transform-recipes/" class="repo-badge-link">
-          <span>🚀</span> Pipeline Workbench
+        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" class="btn btn-secondary">
+          <span>📦</span> npm Package
         </a>
       </div>
     </header>
 
-    <!-- Preset Selector Bar -->
-    <div class="preset-toolbar">
-      <div class="preset-btns">
-        <span class="preset-label">Select JSON:</span>
-        <button class="btn-preset active" id="btnPresetInvoices">Invoices &amp; Batch Allocations</button>
-        <button class="btn-preset" id="btnPresetOrders">E-Commerce Orders</button>
-        <button class="btn-preset" id="btnPresetLogistics">Logistics Waybills</button>
-      </div>
-      <div style="display: flex; gap: 0.5rem; align-items: center;">
-        <span id="statLatency" style="color: var(--success); font-size: 0.82rem; font-weight: 700;">Latency: 0.00 ms</span>
-      </div>
-    </div>
-
-    <!-- 3-Column Live Playground -->
-    <div class="playground-grid">
-      <!-- 1. Input Data -->
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title"><span>📥</span> 1. Source JSON</span>
-          <div style="display: flex; gap: 0.4rem;">
-            <button class="btn-action" id="btnCopyInput">📋 Copy</button>
-            <button class="btn-action" id="btnFormatInput">✨ Format</button>
-          </div>
+    <!-- Why Section -->
+    <div class="card">
+      <h2>💡 Why use rename-json-keys?</h2>
+      <p>
+        JavaScript has no native way to recursively rename keys in deeply nested objects and arrays without writing manual traversal code or mutating your original data.
+      </p>
+      <div class="grid-2">
+        <div class="feature-item">
+          <h3>🔁 Truly Recursive</h3>
+          <p>Renames keys everywhere across nested objects, arrays, and sub-collections in a single pass.</p>
         </div>
-        <textarea id="inputData" spellcheck="false"></textarea>
-        <div class="stats-footer">
-          <span>Input records: <strong id="statInputCount">1</strong></span>
-          <span>Source of Truth: Data</span>
+        <div class="feature-item">
+          <h3>🔒 Non-Destructive</h3>
+          <p>Never mutates your input data. Values, array order, and data structures remain 100% intact.</p>
         </div>
-      </div>
-
-      <!-- 2. Mapping Dictionary -->
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title"><span>🏷️</span> 2. Rename Dictionary</span>
-          <div style="display: flex; gap: 0.4rem;">
-            <button class="btn-action" id="btnCopyKeys">📋 Copy</button>
-            <button class="btn-action" id="btnFormatKeys">✨ Format</button>
-          </div>
+        <div class="feature-item">
+          <h3>⚡ Zero Dependencies</h3>
+          <p>Lightweight and lightning fast with zero third-party packages or bundle bloat.</p>
         </div>
-        <textarea id="inputKeys" spellcheck="false"></textarea>
-        <div class="stats-footer">
-          <span>Mapping rules: <strong id="statRulesCount">0</strong></span>
-          <span>Supports Scoped <code>$as</code></span>
-        </div>
-      </div>
-
-      <!-- 3. Live Renamed Result -->
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title" style="color: var(--success);"><span>✨</span> 3. Live Renamed Output</span>
-          <button class="btn-action" id="btnCopyOutput">📋 Copy</button>
-        </div>
-        <pre id="outputJson" style="color: var(--success);"></pre>
-        <div class="stats-footer">
-          <span>Keys replaced: <strong id="statCount">0</strong></span>
-          <span style="color: var(--success);">Instant Reactive Render</span>
+        <div class="feature-item">
+          <h3>📐 Simple Dictionary Map</h3>
+          <p>Just specify <code>{ "oldKey": "newKey" }</code>. No complex regex or heavy configurations needed.</p>
         </div>
       </div>
     </div>
 
-    <!-- Quick API Guide -->
-    <div class="doc-section">
-      <h2>Quick API Guide</h2>
+    <!-- Quick Start -->
+    <div class="card">
+      <h2>🚀 Quick Start (5 Seconds)</h2>
       <p>Install via npm:</p>
-      <div class="code-block">npm install rename-json-keys</div>
-      
-      <p>Import and execute with zero dependencies in Node.js, modern bundlers, or browsers:</p>
-      <div class="code-block">import { renameJsonKeys } from "rename-json-keys";
+      <pre><code>npm install rename-json-keys</code></pre>
 
-const clean = renameJsonKeys(vouchers, {
-  "DATE": "date",
-  "ALLINVENTORYENTRIES.LIST": "items",
-  "STOCKITEMNAME": "itemName",
-  "BATCHALLOCATIONS.LIST": "batches",
-  "MFDON": "mfdOn",
-  "GODOWNNAME": "godownName"
-});</div>
+      <p>Pass your data and a key map:</p>
+      <pre><code>import { renameJsonKeys } from "rename-json-keys";
 
-      <p>Load directly in browsers from jsDelivr CDN:</p>
-      <div class="code-block">&lt;script type="module"&gt;
-  import { renameJsonKeys } from "https://cdn.jsdelivr.net/gh/keshavsoft/rename-json-keys@main/docs/dist/min.js";
-  const result = renameJsonKeys(data, keyMap);
-&lt;/script&gt;</div>
+const user = {
+  user_id: 101,
+  contact_info: {
+    first_name: "John",
+    last_name: "Doe",
+    email_addr: "john@example.com"
+  }
+};
+
+const keyMap = {
+  user_id: "id",
+  first_name: "firstName",
+  last_name: "lastName",
+  email_addr: "email"
+};
+
+const result = renameJsonKeys(user, keyMap);
+console.log(result);</code></pre>
+
+      <p>Clean renamed output:</p>
+      <pre><code>{
+  "id": 101,
+  "contact_info": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com"
+  }
+}</code></pre>
     </div>
 
+    <!-- Pipeline Role -->
+    <div class="card">
+      <h2>🔗 Role in Declarative Data Pipeline</h2>
+      <p>
+        <code>rename-json-keys</code> is Step 2 in the KeshavSoft declarative data processing suite:
+      </p>
+      <pre><code>[ Raw Enterprise XML / JSON ]
+             │
+             ▼
+   select-json-by-json     ──► Step 1: Filter & project fields
+             │
+             ▼
+    rename-json-keys       ──► Step 2: Normalize verbose keys (This package)
+             │
+             ▼
+ normalize-json-by-json    ──► Step 3: Normalize structures & types
+             │
+             ▼
+     map-json-by-json      ──► Step 4: Reshape into final contract</code></pre>
+      <p>
+        Want to test real-world enterprise datasets and custom key mappings live?
+      </p>
+      <a href="playground.html" class="btn btn-primary" style="margin-top: 0.5rem;">
+        <span>🎮</span> Launch Interactive Playground
+      </a>
+    </div>
+
+    <footer>
+      MIT License © <a href="https://keshavsoft.com" target="_blank" style="color: var(--accent); text-decoration: none;">KeshavSoft</a>
+    </footer>
   </div>
 
-  <script type="module">
-    // Load local engine or fallback to CDN / standalone
-    let renameJsonKeys;
-    try {
-      const mod = await import("../src/index.js");
-      renameJsonKeys = mod.renameJsonKeys || mod.default;
-    } catch (e) {
-      try {
-        const cdnMod = await import("https://cdn.jsdelivr.net/gh/keshavsoft/rename-json-keys@main/src/index.js");
-        renameJsonKeys = cdnMod.renameJsonKeys || cdnMod.default;
-      } catch (err) {
-        // Pure standalone fallback engine
-        const isObject = v => v !== null && typeof v === "object";
-        const isPlainObject = v => isObject(v) && !Array.isArray(v);
-        const forArray = (arr, keys, root) => arr.map(item => renameVal(item, keys, root));
-        const forObj = (obj, keys = {}, root) => {
-          if (!isPlainObject(obj)) return obj;
-          const rootKeys = root ?? keys;
-          const res = {};
-          Object.entries(obj).forEach(([k, val]) => {
-            const rule = keys[k] ?? rootKeys?.[k];
-            let targetKey = k;
-            let childKeys = rootKeys;
-            if (typeof rule === "string") {
-              targetKey = rule;
-            } else if (isPlainObject(rule)) {
-              targetKey = rule.$as || rule.as || k;
-              childKeys = rule;
-            }
-            res[targetKey] = renameVal(val, childKeys, rootKeys);
-          });
-          return res;
-        };
-        const renameVal = (v, keys, root) => {
-          if (!isObject(v)) return v;
-          if (Array.isArray(v)) return forArray(v, keys, root);
-          return forObj(v, keys, root);
-        };
-        renameJsonKeys = (data, keys) => renameVal(data, keys);
-      }
-    }
-
-    // Datasets
-    const datasets = {
-      invoices: {
-        data: [
-          {
-            "DATE": "20260401",
-            "VOUCHERTYPENAME": "Sales/CA",
-            "VOUCHERNUMBER": 1,
-            "REFERENCE": "CA/1",
-            "MASTERID": 174169,
-            "ALLINVENTORYENTRIES.LIST": [
-              {
-                "STOCKITEMNAME": "Shading Net Kgs",
-                "RATE": "280.90/kgs",
-                "AMOUNT": 1280.9,
-                "ACTUALQTY": "4.560 kgs",
-                "BILLEDQTY": "4.560 kgs",
-                "BATCHALLOCATIONS.LIST": [
-                  {
-                    "MFDON": 20210723,
-                    "GODOWNNAME": "Main Location",
-                    "BATCHNAME": "Rishi-Rs.205/-",
-                    "DESTINATIONGODOWNNAME": "Main Location",
-                    "ACTUALQTY": "3.560 kgs",
-                    "BILLEDQTY": "3.560 kgs",
-                    "AMOUNT": 1000
-                  },
-                  {
-                    "MFDON": 20240509,
-                    "GODOWNNAME": "Main Location",
-                    "BATCHNAME": "Bahnu-Fortune-Rs.178/-",
-                    "DESTINATIONGODOWNNAME": "Main Location",
-                    "ACTUALQTY": "1.000 kgs",
-                    "BILLEDQTY": "1.000 kgs",
-                    "AMOUNT": 280.9
-                  }
-                ]
-              },
-              {
-                "STOCKITEMNAME": "ROPE",
-                "RATE": "312.50/kgs",
-                "AMOUNT": 100,
-                "ACTUALQTY": "0.320 kgs",
-                "BILLEDQTY": "0.320 kgs",
-                "BATCHALLOCATIONS.LIST": {
-                  "MFDON": "",
-                  "GODOWNNAME": "Main Location",
-                  "BATCHNAME": "Tuf-Rs.170",
-                  "DESTINATIONGODOWNNAME": "Main Location",
-                  "ACTUALQTY": "0.320 kgs",
-                  "BILLEDQTY": "0.320 kgs",
-                  "AMOUNT": 100
-                }
-              }
-            ]
-          }
-        ],
-        keys: {
-          "DATE": "date",
-          "VOUCHERTYPENAME": "voucherType",
-          "VOUCHERNUMBER": "voucherNumber",
-          "REFERENCE": "reference",
-          "MASTERID": "masterId",
-          "ALLINVENTORYENTRIES.LIST": "inventoryEntries",
-          "STOCKITEMNAME": "stockItemName",
-          "RATE": "rate",
-          "AMOUNT": "amount",
-          "ACTUALQTY": "actualQty",
-          "BILLEDQTY": "billedQty",
-          "BATCHALLOCATIONS.LIST": "batchAllocations",
-          "MFDON": "mfdOn",
-          "GODOWNNAME": "godownName",
-          "BATCHNAME": "batchName",
-          "DESTINATIONGODOWNNAME": "destinationGodownName"
-        }
-      },
-      orders: {
-        data: [
-          {
-            "ORDER_IDENTIFIER": "ORD-99120",
-            "TIMESTAMP_CREATED": "2026-09-24T18:00:00Z",
-            "PURCHASER_NAME": "Sarah Jenkins",
-            "SHIPPING_LOCATION": "Austin, TX",
-            "ORDER_ITEMS_COLLECTION": [
-              {
-                "ITEM_SKU_CODE": "SKU-OPT-100",
-                "PRODUCT_NAME": "Optical Sensor Unit",
-                "UNIT_COUNT": 10,
-                "UNIT_PRICE_USD": 85.00
-              }
-            ]
-          }
-        ],
-        keys: {
-          "ORDER_IDENTIFIER": "orderId",
-          "TIMESTAMP_CREATED": "createdAt",
-          "PURCHASER_NAME": "customerName",
-          "SHIPPING_LOCATION": "shippingCity",
-          "ORDER_ITEMS_COLLECTION": "items",
-          "ITEM_SKU_CODE": "sku",
-          "PRODUCT_NAME": "title",
-          "UNIT_COUNT": "quantity",
-          "UNIT_PRICE_USD": "price"
-        }
-      },
-      logistics: {
-        data: [
-          {
-            "WAYBILL_REFERENCE": "WB-88190",
-            "DEPARTURE_HUB": "Central Warehouse Hub A",
-            "ARRIVAL_DEPOT": "Metro Distribution Depot",
-            "DISPATCH_DRIVER": "Marcus Vance",
-            "CONTAINER_MANIFEST_LIST": [
-              { "CONTAINER_CODE": "C-901", "GROSS_WEIGHT_KG": 4200, "SEAL_TAG": "SL-9941" },
-              { "CONTAINER_CODE": "C-902", "GROSS_WEIGHT_KG": 3150, "SEAL_TAG": "SL-9942" }
-            ]
-          }
-        ],
-        keys: {
-          "WAYBILL_REFERENCE": "waybill",
-          "DEPARTURE_HUB": "origin",
-          "ARRIVAL_DEPOT": "destination",
-          "DISPATCH_DRIVER": "driver",
-          "CONTAINER_MANIFEST_LIST": "containers",
-          "CONTAINER_CODE": "containerId",
-          "GROSS_WEIGHT_KG": "weightKg",
-          "SEAL_TAG": "sealNumber"
-        }
-      }
-    };
-
-    const inputData = document.getElementById("inputData");
-    const inputKeys = document.getElementById("inputKeys");
-    const outputJson = document.getElementById("outputJson");
-    const statLatency = document.getElementById("statLatency");
-    const statCount = document.getElementById("statCount");
-    const statInputCount = document.getElementById("statInputCount");
-    const statRulesCount = document.getElementById("statRulesCount");
-
-    const btnPresetInvoices = document.getElementById("btnPresetInvoices");
-    const btnPresetOrders = document.getElementById("btnPresetOrders");
-    const btnPresetLogistics = document.getElementById("btnPresetLogistics");
-    const presetButtons = [btnPresetInvoices, btnPresetOrders, btnPresetLogistics];
-
-    function setActivePreset(activeBtn) {
-      presetButtons.forEach(btn => btn?.classList.remove("active"));
-      activeBtn?.classList.add("active");
-    }
-
-    function loadPreset(presetKey, activeBtn) {
-      setActivePreset(activeBtn);
-      const sel = datasets[presetKey];
-      inputData.value = JSON.stringify(sel.data, null, 2);
-      inputKeys.value = JSON.stringify(sel.keys, null, 2);
-      render();
-    }
-
-    function render() {
-      try {
-        const data = JSON.parse(inputData.value);
-        const keys = JSON.parse(inputKeys.value);
-
-        statInputCount.textContent = Array.isArray(data) ? data.length : 1;
-        statRulesCount.textContent = Object.keys(keys).length;
-
-        const t0 = performance.now();
-        const result = renameJsonKeys(data, keys);
-        const t1 = performance.now();
-
-        outputJson.textContent = JSON.stringify(result, null, 2);
-        statLatency.textContent = `Latency: ${(t1 - t0).toFixed(2)} ms`;
-        statCount.textContent = Object.keys(keys).length;
-      } catch (e) {
-        outputJson.textContent = `// Error: ${e.message}`;
-        statLatency.textContent = "Error";
-      }
-    }
-
-    // Preset button events
-    btnPresetInvoices.addEventListener("click", () => loadPreset("invoices", btnPresetInvoices));
-    btnPresetOrders.addEventListener("click", () => loadPreset("orders", btnPresetOrders));
-    btnPresetLogistics.addEventListener("click", () => loadPreset("logistics", btnPresetLogistics));
-
-    // Reactive input listeners
-    let debounceTimer;
-    const triggerDebounced = () => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(render, 150);
-    };
-    inputData.addEventListener("input", triggerDebounced);
-    inputKeys.addEventListener("input", triggerDebounced);
-
-    // Copy buttons
-    function attachCopy(btnId, targetEl) {
-      document.getElementById(btnId).addEventListener("click", () => {
-        const text = targetEl.value || targetEl.textContent;
-        navigator.clipboard.writeText(text);
-        const btn = document.getElementById(btnId);
-        const orig = btn.textContent;
-        btn.textContent = "✓ Copied!";
-        setTimeout(() => btn.textContent = orig, 1500);
-      });
-    }
-
-    attachCopy("btnCopyInput", inputData);
-    attachCopy("btnCopyKeys", inputKeys);
-    attachCopy("btnCopyOutput", outputJson);
-
-    // Format buttons
-    document.getElementById("btnFormatInput").addEventListener("click", () => {
-      try {
-        inputData.value = JSON.stringify(JSON.parse(inputData.value), null, 2);
-        render();
-      } catch (e) {
-        alert("Invalid JSON: " + e.message);
-      }
-    });
-
-    document.getElementById("btnFormatKeys").addEventListener("click", () => {
-      try {
-        inputKeys.value = JSON.stringify(JSON.parse(inputKeys.value), null, 2);
-        render();
-      } catch (e) {
-        alert("Invalid JSON: " + e.message);
-      }
-    });
-
-    // Initial load
-    loadPreset("invoices", btnPresetInvoices);
-  </script>
 </body>
 </html>
