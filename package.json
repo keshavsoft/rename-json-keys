@@ -1,6 +1,6 @@
 {
   "name": "rename-json-keys",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Recursively rename JSON keys using a mapping dictionary or spec without changing data structure.",
   "main": "index.js",
