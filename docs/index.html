@@ -336,35 +336,36 @@ const clean = renameJsonKeys(data, keyMap);</code></pre>
   </div>
 
   <script>
-    // Embedded core rename engine
+    // Embedded core v2 tree-scoped rename engine
     const isObject = v => v !== null && typeof v === "object";
     const isPlainObject = v => isObject(v) && !Array.isArray(v);
 
-    const forArray = (arr, keys, root) => arr.map(item => renameValue(item, keys, root));
+    const forArray = (arr, spec) => arr.map(item => renameValue(item, spec));
 
-    const forObject = (obj, keys = {}, root) => {
-      if (!isPlainObject(obj)) return obj;
-      const rootKeys = root ?? keys;
+    const forObject = (source, spec = {}) => {
+      if (!isPlainObject(source)) return source;
       const res = {};
-      Object.entries(obj).forEach(([k, val]) => {
-        const rule = keys[k] ?? rootKeys?.[k];
+      Object.entries(source).forEach(([k, val]) => {
+        const rule = spec?.[k];
         let targetKey = k;
-        let childKeys = rootKeys;
+        let childSpec = undefined;
+
         if (typeof rule === "string") {
           targetKey = rule;
         } else if (isPlainObject(rule)) {
           targetKey = rule.$as || rule.as || k;
-          childKeys = rule;
+          childSpec = rule;
         }
-        res[targetKey] = renameValue(val, childKeys, rootKeys);
+
+        res[targetKey] = renameValue(val, childSpec);
       });
       return res;
     };
 
-    const renameValue = (v, keys, root) => {
-      if (!isObject(v)) return v;
-      if (Array.isArray(v)) return forArray(v, keys, root);
-      return forObject(v, keys, root);
+    const renameValue = (source, spec) => {
+      if (!isObject(source)) return source;
+      if (Array.isArray(source)) return forArray(source, spec);
+      return forObject(source, spec);
     };
 
     const renameJsonKeys = (data, keys) => renameValue(data, keys);
@@ -384,8 +385,10 @@ const clean = renameJsonKeys(data, keyMap);</code></pre>
       user_id: "id",
       first_name: "firstName",
       last_name: "lastName",
-      email_addr: "email",
-      phone_no: "phone"
+      contact_info: {
+        email_addr: "email",
+        phone_no: "phone"
+      }
     };
 
     const inputData = document.getElementById("inputData");

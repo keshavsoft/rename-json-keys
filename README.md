@@ -45,18 +45,20 @@ import { renameJsonKeys } from "rename-json-keys";
 
 const user = {
   user_id: 101,
+  first_name: "Alice",
   contact_info: {
-    first_name: "John",
-    last_name: "Doe",
-    email_addr: "john@example.com"
+    email_addr: "alice@example.com",
+    phone_no: "+1-555-0199"
   }
 };
 
 const keyMap = {
   user_id: "id",
   first_name: "firstName",
-  last_name: "lastName",
-  email_addr: "email"
+  contact_info: {
+    email_addr: "email",
+    phone_no: "phone"
+  }
 };
 
 const result = renameJsonKeys(user, keyMap);
@@ -68,10 +70,10 @@ console.log(result);
 ```json
 {
   "id": 101,
+  "firstName": "Alice",
   "contact_info": {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john@example.com"
+    "email": "alice@example.com",
+    "phone": "+1-555-0199"
   }
 }
 ```
