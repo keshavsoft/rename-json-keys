@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rename-json-keys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: rgba(16, 24, 40, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --code-bg: #030712;
+      --code-border: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.10), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 140, 248, 0.06), transparent);
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Interactive Live Panel */
+    .live-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .live-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(12px);
+    }
+
+    .box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .box-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    textarea, .output-pre {
+      width: 100%;
+      height: 280px;
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 6px;
+      padding: 0.85rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #e2e8f0;
+      resize: vertical;
+      overflow: auto;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .output-pre {
+      white-space: pre;
+      margin: 0;
+    }
+
+    /* Content & Documentation */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.85rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    pre.code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 6px;
+      padding: 0.85rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: #e2e8f0;
+      overflow-x: auto;
+      margin-bottom: 0.75rem;
+    }
+
+    ul.features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    ul.features-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    ul.features-list strong {
+      color: #fff;
+    }
+
+    /* Footer & Versions Menu */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .versions-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .versions-label {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .versions-nav a, footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .versions-nav a:hover, footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>rename-json-keys</h1>
+      <p class="tagline">
+        Recursively rename keys in any JSON structure using a simple dictionary map. Zero dependencies, 100% data preservation.
+      </p>
+    </header>
+
+    <!-- Unified Live Interactive Section (Above the fold) -->
+    <main class="live-panel">
+      <!-- 1. Source JSON -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">1. Source JSON</span>
+          <button class="btn-action" id="btnCopySource">Copy</button>
+        </div>
+        <textarea id="inputData" spellcheck="false"></textarea>
+      </div>
+
+      <!-- 2. Key Map -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">2. Rename Dictionary</span>
+          <button class="btn-action" id="btnCopyKeys">Copy</button>
+        </div>
+        <textarea id="inputKeys" spellcheck="false"></textarea>
+      </div>
+
+      <!-- 3. Live Renamed Output -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">3. Live Output</span>
+          <button class="btn-action" id="btnCopyOutput">Copy</button>
+        </div>
+        <pre class="output-pre" id="outputJson"></pre>
+      </div>
+    </main>
+
+    <!-- Concise Story & Usage -->
+    <section class="content-grid">
+      <!-- Card 1: How to use -->
+      <div class="card">
+        <h2>Installation &amp; Usage</h2>
+        <p>Install via npm:</p>
+        <pre class="code-block"><code>npm install rename-json-keys</code></pre>
+        <p>Pass your data and mapping dictionary:</p>
+        <pre class="code-block"><code>import { renameJsonKeys } from "rename-json-keys";
+
+const clean = renameJsonKeys(data, keyMap);</code></pre>
+      </div>
+
+      <!-- Card 2: Core Guarantees -->
+      <div class="card">
+        <h2>Core Guarantees</h2>
+        <ul class="features-list">
+          <li><span>🔁</span> <strong>Truly Recursive:</strong> Renames keys across all nested objects and arrays.</li>
+          <li><span>🔒</span> <strong>Non-Destructive:</strong> Input data, values, and array order are 100% preserved.</li>
+          <li><span>⚡</span> <strong>Zero Dependencies:</strong> Lightweight pure JavaScript with no bundle bloat.</li>
+          <li><span>📐</span> <strong>Simple Mapping:</strong> Just pass a clean <code>{ "oldKey": "newKey" }</code> dictionary.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer with Versions Menu -->
+    <footer>
+      <div class="versions-nav">
+        <span class="versions-label">Versions:</span>
+        <a href="v1/index.html">v1 (Advanced Playground)</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank">GitHub</a>
+        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank">npm</a>
+        <span>MIT © KeshavSoft</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Embedded core v3 tree-scoped rename engine
+    const isObject = v => v !== null && typeof v === "object";
+    const isPlainObject = v => isObject(v) && !Array.isArray(v);
+
+    const forArray = (arr, spec) => arr.map(item => renameValue(item, spec));
+
+    const forObject = (source, spec = {}) => {
+      if (!isPlainObject(source)) return source;
+      const res = {};
+      Object.entries(source).forEach(([k, val]) => {
+        const rule = spec?.[k];
+        let targetKey = k;
+        let childSpec = undefined;
+
+        if (typeof rule === "string") {
+          targetKey = rule;
+        } else if (isPlainObject(rule)) {
+          targetKey = rule.$as || rule.as || rule.$rename || k;
+          const { $as, as, $rename, ...cleanSpec } = rule;
+          childSpec = cleanSpec;
+        }
+
+        res[targetKey] = renameValue(val, childSpec);
+      });
+      return res;
+    };
+
+    const renameValue = (source, spec) => {
+      if (!isObject(source)) return source;
+      if (Array.isArray(source)) return forArray(source, spec);
+      return forObject(source, spec);
+    };
+
+    const renameJsonKeys = (data, keys) => renameValue(data, keys);
+
+    // Initial dataset demonstrating Array of objects + nested $as parent renaming
+    const initialData = [
+      {
+        user_id: 101,
+        first_name: "Alice",
+        last_name: "Smith",
+        contact_info: {
+          email_addr: "alice@example.com",
+          phone_no: "+1-555-0199"
+        },
+        roles_list: [
+          { role_name: "admin", access_level: 1 }
+        ]
+      }
+    ];
+
+    const initialKeys = {
+      user_id: "id",
+      first_name: "firstName",
+      last_name: "lastName",
+      contact_info: {
+        $as: "contact",
+        email_addr: "email",
+        phone_no: "phone"
+      },
+      roles_list: {
+        $as: "roles",
+        role_name: "roleName",
+        access_level: "level"
+      }
+    };
+
+    const inputData = document.getElementById("inputData");
+    const inputKeys = document.getElementById("inputKeys");
+    const outputJson = document.getElementById("outputJson");
+
+    inputData.value = JSON.stringify(initialData, null, 2);
+    inputKeys.value = JSON.stringify(initialKeys, null, 2);
+
+    function render() {
+      try {
+        const data = JSON.parse(inputData.value);
+        const keys = JSON.parse(inputKeys.value);
+        const result = renameJsonKeys(data, keys);
+        outputJson.textContent = JSON.stringify(result, null, 2);
+      } catch (err) {
+        outputJson.textContent = `// Error: ${err.message}`;
+      }
+    }
+
+    inputData.addEventListener("input", render);
+    inputKeys.addEventListener("input", render);
+
+    function attachCopy(btnId, targetEl) {
+      document.getElementById(btnId).addEventListener("click", () => {
+        const text = targetEl.value || targetEl.textContent;
+        navigator.clipboard.writeText(text);
+        const btn = document.getElementById(btnId);
+        const orig = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = orig, 1200);
+      });
+    }
+
+    attachCopy("btnCopySource", inputData);
+    attachCopy("btnCopyKeys", inputKeys);
+    attachCopy("btnCopyOutput", outputJson);
+
+    render();
+  </script>
+</body>
+</html>

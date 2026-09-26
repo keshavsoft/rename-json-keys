@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Advanced</title><link rel="stylesheet" href="./css/site.css"></head>
+<body><header><a href="./index.html">rename-json-keys</a><nav><a href="./problem.html">Problem</a><a href="./basic.html">Basic</a><a href="./nested.html">Nested</a><a href="./advanced.html">Advanced</a><a href="./usage.html">Usage</a></nav></header>
+<main><p class="eyebrow">04 · Advanced</p><h1>Use explicit mapping rules when the transformation needs more control.</h1>
+<p>For nested structures, the mapping can describe the same hierarchy as the input. This keeps the transformation predictable and readable.</p>
+<pre>{
+  "customer": {
+    "first_name": "name",
+    "address": {
+      "zip_code": "postal_code"
+    }
+  }
+}</pre>
+<p>Keep the mapping focused on naming. Shape normalization and value conversion are separate concerns.</p>
+<a class="button" href="./usage.html">Next: usage →</a></main></body></html>
