@@ -3,30 +3,47 @@
 > Recursively rename JSON keys using a simple dictionary map without changing data structures or values.
 
 [![npm version](https://img.shields.io/npm/v/rename-json-keys.svg)](https://www.npmjs.com/package/rename-json-keys)
-[![Documentation](https://img.shields.io/badge/Docs-Live%20Documentation-blue.svg)](https://keshavsoft.github.io/rename-json-keys/)
-[![Playground](https://img.shields.io/badge/Playground-Interactive%20Tester-emerald.svg)](https://keshavsoft.github.io/rename-json-keys/playground.html)
+[![Documentation](https://img.shields.io/badge/Docs-Live%20Story-blue.svg)](https://keshavsoft.github.io/rename-json-keys/)
+[![Playground](https://img.shields.io/badge/Playground-Interactive%20Tester-emerald.svg)](https://keshavsoft.github.io/rename-json-keys/playground/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+### The Problem
+
+> **"The data is useful. The keys are not always useful."**
+
+External systems and APIs often return field names that do not match the naming conventions used by your application. Changing the values or rebuilding the whole JSON structure just to rename fields adds unnecessary work and introduces bugs.
+
+**The Goal:** Keep the JSON data exactly where it is and change only the key names.
 
 ---
 
 ## 🔗 Quick Links
 
-* 📖 **Documentation**: [https://keshavsoft.github.io/rename-json-keys/](https://keshavsoft.github.io/rename-json-keys/)
-* 🎮 **Interactive Playground**: [https://keshavsoft.github.io/rename-json-keys/playground.html](https://keshavsoft.github.io/rename-json-keys/playground.html)
+* 📖 **Documentation Story**:
+  * [01 · Problem](https://keshavsoft.github.io/rename-json-keys/) — Why key renaming should be isolated
+  * [02 · Basic](https://keshavsoft.github.io/rename-json-keys/basic.html) — Three JSON objects, one simple transformation
+  * [03 · Nested](https://keshavsoft.github.io/rename-json-keys/nested.html) — Recursive structures and arrays
+  * [04 · Advanced](https://keshavsoft.github.io/rename-json-keys/advanced.html) — Explicit rules and predictable mapping
+  * [05 · Usage](https://keshavsoft.github.io/rename-json-keys/usage.html) — Small transformation step & guarantees
+* 🎮 **Interactive Playground** (4 Flavors): [https://keshavsoft.github.io/rename-json-keys/playground/](https://keshavsoft.github.io/rename-json-keys/playground/)
+  * [01 · Simple Object](https://keshavsoft.github.io/rename-json-keys/playground/)
+  * [02 · Nested Object](https://keshavsoft.github.io/rename-json-keys/playground/nested.html)
+  * [03 · Array of Objects](https://keshavsoft.github.io/rename-json-keys/playground/array.html)
+  * [04 · Advanced Directives (`$as`)](https://keshavsoft.github.io/rename-json-keys/playground/advanced.html)
 * 📦 **npm Package**: [https://www.npmjs.com/package/rename-json-keys](https://www.npmjs.com/package/rename-json-keys)
 * 🐙 **GitHub Repository**: [https://github.com/keshavsoft/rename-json-keys](https://github.com/keshavsoft/rename-json-keys)
 
 ---
 
-## Why rename-json-keys?
+## Core Guarantees
 
-JavaScript has no native way to recursively rename keys in deeply nested objects and arrays without writing manual traversal code or mutating your original data.
-
-`rename-json-keys` gives you:
-* **Truly Recursive**: Renames keys everywhere in arrays and nested objects.
-* **Non-Destructive**: Never mutates input data; data structure and order remain intact.
-* **Zero Dependencies**: Lightweight and fast.
-* **Simple Dictionary Map**: Just specify `{ "oldKey": "newKey" }`.
+* ✅ **Renames keys recursively** throughout objects and arrays.
+* ✅ **Preserves values** untouched without coercion or conversion.
+* ✅ **Preserves the JSON hierarchy** and property ordering.
+* ✅ **Zero dependencies** — lightweight and fast.
+* ✅ **Focused transformation** — does not mix key renaming with unrelated data normalization.
 
 ---
 
@@ -38,105 +55,125 @@ npm install rename-json-keys
 
 ---
 
-## Quick Start (5 Seconds)
+## Usage
+
+### 1. Basic Transformation (Flat Object)
+
+```javascript
+import renameJsonKeys from "rename-json-keys";
+
+const input = {
+  first_name: "John",
+  age: 30,
+  city: "Kakinada"
+};
+
+const map = {
+  first_name: "name",
+  age: "years",
+  city: "location"
+};
+
+const output = renameJsonKeys(input, map);
+console.log(output);
+// { name: "John", years: 30, location: "Kakinada" }
+```
+
+---
+
+### 2. Nested Objects & Arrays
+
+The transformation recursively follows the JSON structure, including nested objects inside arrays:
 
 ```javascript
 import { renameJsonKeys } from "rename-json-keys";
 
-const user = {
-  user_id: 101,
-  first_name: "Alice",
+const input = {
+  customer: {
+    first_name: "John",
+    address: { zip_code: "533001" }
+  },
+  items: [
+    { item_name: "Pen" },
+    { item_name: "Book" }
+  ]
+};
+
+const map = {
+  customer: {
+    first_name: "name",
+    address: { zip_code: "postal_code" }
+  },
+  items: { item_name: "name" }
+};
+
+const output = renameJsonKeys(input, map);
+```
+
+**Output:**
+```json
+{
+  "customer": {
+    "name": "John",
+    "address": { "postal_code": "533001" }
+  },
+  "items": [
+    { "name": "Pen" },
+    { "name": "Book" }
+  ]
+}
+```
+
+---
+
+### 3. Parent Key Renaming (`$as` Directive)
+
+Rename both the parent container key and its child properties simultaneously using the `"$as"` directive:
+
+```javascript
+const input = {
   contact_info: {
     email_addr: "alice@example.com",
     phone_no: "+1-555-0199"
   }
 };
 
-const keyMap = {
-  user_id: "id",
-  first_name: "firstName",
+const map = {
   contact_info: {
+    $as: "contact",
     email_addr: "email",
     phone_no: "phone"
   }
 };
 
-const result = renameJsonKeys(user, keyMap);
-console.log(result);
-```
-
-### Output:
-
-```json
-{
-  "id": 101,
-  "firstName": "Alice",
-  "contact_info": {
-    "email": "alice@example.com",
-    "phone": "+1-555-0199"
-  }
-}
+const output = renameJsonKeys(input, map);
+// { contact: { email: "alice@example.com", phone: "+1-555-0199" } }
 ```
 
 ---
 
-## Options Object Convention
+## Single Object Parameter Convention
 
 Also supports the KeshavSoft single-object argument convention:
 
 ```javascript
-const result = renameJsonKeys({
-  inData: user,
-  inKeys: keyMap
+const output = renameJsonKeys({
+  inSource: inputData,
+  inSpec: renameMap
+});
+
+// Or using inData / inKeys aliases:
+const output = renameJsonKeys({
+  inData: inputData,
+  inKeys: renameMap
 });
 ```
 
 ---
 
-## Advanced: Deeply Nested Enterprise Data
+## Enterprise Pipeline Role
 
-Handles multi-level enterprise structures (like accounting vouchers, orders, or logistics manifests) seamlessly:
-
-```javascript
-const vouchers = [
-  {
-    DATE: "20260401",
-    VOUCHERNUMBER: 1,
-    "ALLINVENTORYENTRIES.LIST": [
-      {
-        STOCKITEMNAME: "Shading Net Kgs",
-        AMOUNT: 1280.9,
-        "BATCHALLOCATIONS.LIST": [
-          {
-            MFDON: 20210723,
-            GODOWNNAME: "Main Location",
-            AMOUNT: 1000
-          }
-        ]
-      }
-    ]
-  }
-];
-
-const keyMap = {
-  DATE: "date",
-  VOUCHERNUMBER: "voucherNumber",
-  "ALLINVENTORYENTRIES.LIST": "inventoryEntries",
-  STOCKITEMNAME: "stockItemName",
-  AMOUNT: "amount",
-  "BATCHALLOCATIONS.LIST": "batchAllocations",
-  MFDON: "mfdOn",
-  GODOWNNAME: "godownName"
-};
-
-const clean = renameJsonKeys(vouchers, keyMap);
-```
-
----
-
-## Pipeline Role
-
-Used as Step 2 in the KeshavSoft declarative data suite:
+`rename-json-keys` serves as Step 2 in the KeshavSoft declarative data suite:
 
 ```text
 Tally XML ➔ select-json-by-json ➔ rename-json-keys ➔ normalize-json-by-json ➔ map-json-by-json
