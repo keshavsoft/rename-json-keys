@@ -530,8 +530,9 @@ const clean = renameJsonKeys(vouchers, {
             if (typeof rule === "string") {
               targetKey = rule;
             } else if (isPlainObject(rule)) {
-              targetKey = rule.$as || rule.as || k;
-              childKeys = rule;
+              targetKey = rule.$as || rule.as || rule.$rename || k;
+              const { $as, as, $rename, ...cleanRule } = rule;
+              childKeys = cleanRule;
             }
             res[targetKey] = renameVal(val, childKeys, rootKeys);
           });

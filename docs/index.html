@@ -336,7 +336,7 @@ const clean = renameJsonKeys(data, keyMap);</code></pre>
   </div>
 
   <script>
-    // Embedded core v2 tree-scoped rename engine
+    // Embedded core v3 tree-scoped rename engine
     const isObject = v => v !== null && typeof v === "object";
     const isPlainObject = v => isObject(v) && !Array.isArray(v);
 
@@ -353,8 +353,9 @@ const clean = renameJsonKeys(data, keyMap);</code></pre>
         if (typeof rule === "string") {
           targetKey = rule;
         } else if (isPlainObject(rule)) {
-          targetKey = rule.$as || rule.as || k;
-          childSpec = rule;
+          targetKey = rule.$as || rule.as || rule.$rename || k;
+          const { $as, as, $rename, ...cleanSpec } = rule;
+          childSpec = cleanSpec;
         }
 
         res[targetKey] = renameValue(val, childSpec);
@@ -370,24 +371,35 @@ const clean = renameJsonKeys(data, keyMap);</code></pre>
 
     const renameJsonKeys = (data, keys) => renameValue(data, keys);
 
-    // Initial clean, friendly dataset
-    const initialData = {
-      user_id: 101,
-      first_name: "Alice",
-      last_name: "Smith",
-      contact_info: {
-        email_addr: "alice@example.com",
-        phone_no: "+1-555-0199"
+    // Initial dataset demonstrating Array of objects + nested $as parent renaming
+    const initialData = [
+      {
+        user_id: 101,
+        first_name: "Alice",
+        last_name: "Smith",
+        contact_info: {
+          email_addr: "alice@example.com",
+          phone_no: "+1-555-0199"
+        },
+        roles_list: [
+          { role_name: "admin", access_level: 1 }
+        ]
       }
-    };
+    ];
 
     const initialKeys = {
       user_id: "id",
       first_name: "firstName",
       last_name: "lastName",
       contact_info: {
+        $as: "contact",
         email_addr: "email",
         phone_no: "phone"
+      },
+      roles_list: {
+        $as: "roles",
+        role_name: "roleName",
+        access_level: "level"
       }
     };
 
