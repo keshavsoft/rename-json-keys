@@ -200,7 +200,7 @@ body {
 
 textarea, .output-pre {
     width: 100%;
-    height: 360px;
+    height: var(--editor-height, 240px);
     background: var(--code-bg);
     border: 1px solid var(--code-border);
     border-radius: 6px;
@@ -211,6 +211,27 @@ textarea, .output-pre {
     color: #e2e8f0;
     resize: vertical;
     overflow: auto;
+}
+
+/* Content-proportional editor heights per flavor */
+body[data-flavor="simple"] textarea,
+body[data-flavor="simple"] .output-pre {
+    height: 185px;
+}
+
+body[data-flavor="nested"] textarea,
+body[data-flavor="nested"] .output-pre {
+    height: 240px;
+}
+
+body[data-flavor="array"] textarea,
+body[data-flavor="array"] .output-pre {
+    height: 285px;
+}
+
+body[data-flavor="advanced"] textarea,
+body[data-flavor="advanced"] .output-pre {
+    height: 330px;
 }
 
 textarea:focus {
