@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    if (location.pathname.endsWith('/')) {
+      location.replace(location.pathname.replace(/\/+$/, '') + location.search + location.hash);
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playground: Advanced Directives - rename-json-keys</title>
+  <link rel="stylesheet" href="./css/playground.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Main Top Navigation -->
+    <nav class="main-nav">
+      <a href="../index.html" class="brand">rename-json-keys</a>
+      <a href="../index.html">Problem</a>
+      <a href="../basic.html">Basic</a>
+      <a href="../nested.html">Nested</a>
+      <a href="../advanced.html">Advanced</a>
+      <a href="../usage.html">Usage</a>
+      <a href="./index.html" class="active-doc">Playground</a>
+    </nav>
+
+    <!-- Header & Sub-Navigation Tabs -->
+    <header>
+      <div class="header-top">
+        <h1>rename-json-keys Playground</h1>
+      </div>
+      <p class="tagline">
+        Interactive real-time testbed. Edit the source JSON or rename dictionary to see the results live.
+      </p>
+
+      <nav class="tabs-nav">
+        <a href="./index.html" class="tab-link"><span class="tab-badge">01</span> Simple Object</a>
+        <a href="./nested.html" class="tab-link"><span class="tab-badge">02</span> Nested Object</a>
+        <a href="./array.html" class="tab-link"><span class="tab-badge">03</span> Array of Objects</a>
+        <a href="./advanced.html" class="tab-link active"><span class="tab-badge">04</span> Advanced Directives</a>
+      </nav>
+    </header>
+
+    <!-- 3-Column Live Interactive Panel -->
+    <main class="live-panel">
+      <!-- 1. Source JSON -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">1. Source JSON</span>
+          <button class="btn-action" id="btnCopySource">Copy</button>
+        </div>
+        <textarea id="inputData" spellcheck="false"></textarea>
+      </div>
+
+      <!-- 2. Rename Dictionary -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">2. Rename Dictionary</span>
+          <button class="btn-action" id="btnCopyKeys">Copy</button>
+        </div>
+        <textarea id="inputKeys" spellcheck="false"></textarea>
+      </div>
+
+      <!-- 3. Live Renamed Output -->
+      <div class="box">
+        <div class="box-header">
+          <span class="box-title">3. Live Output</span>
+          <button class="btn-action" id="btnCopyOutput">Copy</button>
+        </div>
+        <pre class="output-pre" id="outputJson"></pre>
+      </div>
+    </main>
+
+    <!-- Flavor Details -->
+    <section class="flavor-card">
+      <h2>Flavor 04 · Advanced Parent Renaming ($as Directive)</h2>
+      <p>
+        Rename both the parent object/array key itself and its child properties simultaneously using the <code>"$as"</code> directive inside the mapping definition.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="versions-nav">
+        <span>Playground Flavor: <strong>Advanced Directives</strong></span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/keshavsoft/rename-json-keys" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.npmjs.com/package/rename-json-keys" target="_blank" rel="noreferrer">npm</a>
+        <span>MIT © KeshavSoft</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module">
+    import initPlayground from "./js/playgroundEngine.js";
+
+    const localInitialSource = [
+      {
+        user_id: 101,
+        first_name: "Alice",
+        last_name: "Smith",
+        contact_info: {
+          email_addr: "alice@example.com",
+          phone_no: "+1-555-0199"
+        },
+        roles_list: [
+          { role_name: "admin", access_level: 1 }
+        ]
+      }
+    ];
+
+    const localInitialMapping = {
+      user_id: "id",
+      first_name: "firstName",
+      last_name: "lastName",
+      contact_info: {
+        $as: "contact",
+        email_addr: "email",
+        phone_no: "phone"
+      },
+      roles_list: {
+        $as: "roles",
+        role_name: "roleName",
+        access_level: "level"
+      }
+    };
+
+    initPlayground({
+      inInitialSource: localInitialSource,
+      inInitialMapping: localInitialMapping
+    });
+  </script>
+</body>
+</html>
